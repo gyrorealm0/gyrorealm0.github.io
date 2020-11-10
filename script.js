@@ -20,12 +20,14 @@ function getCurrency() {
 }
 
 function buyCurrencyMaker() {
-  if (currency >= currencyMakerCost) {
-    currency = currency - currencyMakerCost;
-    currencyMakers++;
-    currencyMakerCost = Math.round(currencyMakerCost * 1.1);
-    updateVar()
-  }
+    while(currency > currencyMakerCost) {
+        if (currency >= currencyMakerCost) {
+        currency = currency - currencyMakerCost;
+        currencyMakers++;
+        currencyMakerCost = Math.round(currencyMakerCost * 1.1);
+        updateVar()
+        }
+    }
 }
 
 function updateGame() {
