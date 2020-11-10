@@ -14,6 +14,10 @@ function updateVar() {
     document.getElementById("possiblePrestigePoints").innerHTML = possiblePrestigePoints.toFixed(2);
 }
 
+function save() {
+    document.cookie = prestigePoints;
+}
+
 function getCurrency() {
     currency++;
     updateVar()
@@ -49,6 +53,10 @@ function prestige() {
     currencyMakers = 0;
     currency = 0;
     currencyMakerCost = 10;
+}
+
+function load() {
+    prestigePoints = document.cookie;
 }
 
 setInterval(updateGame, (1))
