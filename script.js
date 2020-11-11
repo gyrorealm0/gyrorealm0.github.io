@@ -17,7 +17,7 @@ var playerData = [
     currencyUpgrades = 0,
     prestigeUpgrades = 0,
     test = "",
-    saveArray = [0, 0, 0, 0, 0, 0, 0]
+    saveArray = [0, 0, 0, 0, 0, 0, 0, 0]
 ]
 
 function fixVar() {
@@ -43,7 +43,7 @@ function updateVar() {
 }
 
 function save() {
-    saveArray = [prestigePoints, time, currencyUpgrades, prestigeUpgrades, upgradeUpgrades, currency, currencyMakers];
+    saveArray = [prestigePoints, time, currencyUpgrades, prestigeUpgrades, upgradeUpgrades, currency, currencyMakers, startCurrency];
     localStorage.setItem("save", JSON.stringify(saveArray));
 }
 
@@ -80,6 +80,7 @@ function priceCheck() {
     currencyUpgradeCost = 1 + Math.pow(currencyUpgrades, 5);
     currencyMultiplier = 1 + Math.pow(currencyUpgrades, 2);
     currencyMakerCost = 1 + Math.pow(1.1, currencyMakers) * 10;
+    startCurrencyUpgradeCost = Math.pow(5, Math.log(startCurrency, 10)) * 2000;
 }
 
 function prestigeCheck() {
@@ -106,6 +107,7 @@ function load() {
     upgradeUpgrades = saveArray[4];
     currency = saveArray[5];
     currencyMakers = saveArray[6];
+    startCurrency = saveArray[7];
 }
 
 function upgradePrestige() {
@@ -139,7 +141,6 @@ function upgradeUpgrade() {
 function upgradeStartCurrency() {
     if(time > startCurrencyUpgradeCost) {
         startCurrency *= 10;
-        startCurrencyUpgradeCost *= 5;
     }
 }
 
