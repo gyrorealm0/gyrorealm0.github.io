@@ -143,7 +143,7 @@ function upgradeStartCurrency() {
     }
 }
 
-if(localStorage.getItem("save").length < 1) {
+if(localStorage.getItem("save") === null) {
     localStorage.setItem("save", JSON.stringify(saveArray));
 }
 
