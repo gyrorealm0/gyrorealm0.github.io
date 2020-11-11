@@ -137,6 +137,6 @@ function upgradeStartCurrency() {
 fixVar();
 prestige();
 load();
-
+updateVar();
 
 setInterval(updateGame, (1))
