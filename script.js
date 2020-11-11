@@ -65,5 +65,8 @@ function load() {
 }
 
 fixVar();
-load();
+
+if(parseFloat(document.cookie) > 0) {
+    load();
+}
 setInterval(updateGame, (1))
