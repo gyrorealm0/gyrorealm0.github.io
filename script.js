@@ -43,7 +43,7 @@ function updateVar() {
 }
 
 function save() {
-    saveArray = [prestigePoints + possiblePrestigePoints, time, currencyUpgrades, prestigeUpgrades, upgradeUpgrades, currency, currencyMakers];
+    saveArray = [prestigePoints, time, currencyUpgrades, prestigeUpgrades, upgradeUpgrades, currency, currencyMakers];
     document.cookie = JSON.stringify(saveArray);
 }
 
