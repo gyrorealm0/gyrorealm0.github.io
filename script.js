@@ -66,6 +66,4 @@ function load() {
 
 fixVar();
 
-load();
-
 setInterval(updateGame, (1))
