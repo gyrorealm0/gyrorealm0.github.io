@@ -12,6 +12,7 @@ var playerData = [
     upgradeMultiplier = 1,
     upgradeUpgrades = 0,
     startCurrency = 1,
+    startCurrencyUpgrades = 1;
     startCurrencyUpgradeCost = 2000,
     time = 0,
     currencyUpgrades = 0,
@@ -79,9 +80,10 @@ function priceCheck() {
     prestigeMultiplier = 1 + Math.pow(prestigeUpgrades, 2);
     currencyUpgradeCost = 1 + Math.pow(currencyUpgrades, 5);
     currencyMultiplier = 1 + Math.pow(currencyUpgrades, 2);
-    currencyMakerCost = 1 + Math.pow(1.1, currencyMakers) * 10;
-    startCurrencyUpgradeCost = 1 + Math.pow(Math.log(startCurrency, 10), 5) * 2000;
-}
+    currencyMakerCost = 1 + Math.pow(currencyMakers, 1.1) * 10;
+    startCurrencyUpgradeCost = 1 + Math.pow(startCurrencyUpgrades, 5) * 2000;
+    startCurrency = math.pow(startCurrencyUpgrades, 10);
+}	
 
 function prestigeCheck() {
     possiblePrestigePoints = (Math.sqrt(currency + currencyMakers) / (1 + prestigePoints)) * (prestigeMultiplier) * (upgradeMultiplier);
@@ -140,7 +142,7 @@ function upgradeUpgrade() {
 
 function upgradeStartCurrency() {
     if(time > startCurrencyUpgradeCost) {
-        startCurrency *= 10;
+        startCurrencyUpgrades++;
     }
 }
 
