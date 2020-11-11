@@ -113,7 +113,7 @@ function load() {
 }
 
 function upgradePrestige() {
-    while(currency > prestigeUpgradeCost){
+    while(currency >= prestigeUpgradeCost){
         priceCheck();
         if(currency >= prestigeUpgradeCost) {
             currency -= prestigeUpgradeCost;
@@ -123,7 +123,7 @@ function upgradePrestige() {
 }
 
 function upgradeCurrency() {
-    while(prestigePoints > currencyUpgradeCost) {
+    while(prestigePoints >= currencyUpgradeCost) {
         priceCheck();
         if(prestigePoints >= currencyUpgradeCost) {
             prestigePoints -= currencyUpgradeCost;
