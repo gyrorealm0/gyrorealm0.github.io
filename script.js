@@ -25,6 +25,7 @@ function fixVar() {
     time = 0;
     currency = 0;
     possiblePrestigePoints = 0;
+    
 }
 
 function updateVar() {
@@ -87,7 +88,12 @@ function prestige() {
 }
 
 function load() {
-    prestigePoints = parseFloat(document.cookie);
+    saveArray = JSON.parse(document.cookie)
+    prestigePoints = saveArray[0];
+    time = saveArray[1];
+    currencyUpgrades = saveArray[2];
+    prestigeUpgrades = saveArray[3];
+    upgradeUpgrades = saveArray[4];
 }
 
 function upgradePrestige() {
