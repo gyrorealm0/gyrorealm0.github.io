@@ -144,7 +144,13 @@ function upgradeStartCurrency() {
 }
 
 function reset() {
-    saveArray = [0, 0, 0, 0, 0, 0, 0];
+    prestigePoints = 0;
+    time = 0;
+    currencyUpgrades = 0;
+    prestigeUpgrades = 0;
+    upgradeUpgrades = 0;
+    currency = 0;
+    currencyMakers = 0;
 }
 
 if(localStorage.getItem("save") === null) {
