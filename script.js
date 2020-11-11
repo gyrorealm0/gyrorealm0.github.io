@@ -109,16 +109,20 @@ function load() {
 }
 
 function upgradePrestige() {
-    if(currency >= prestigeUpgradeCost) {
-        currency -= prestigeUpgradeCost;
-        prestigeUpgrades++;
+    while(currency > prestigeUpgradeCost){
+        if(currency >= prestigeUpgradeCost) {
+            currency -= prestigeUpgradeCost;
+            prestigeUpgrades++;
+        }
     }
 }
 
 function upgradeCurrency() {
-    if(prestigePoints >= currencyUpgradeCost) {
-        prestigePoints -= currencyUpgradeCost;
-        currencyUpgrades++;
+    while(prestigePoints > currencyUpgradeCost) {
+        if(prestigePoints >= currencyUpgradeCost) {
+            prestigePoints -= currencyUpgradeCost;
+            currencyUpgrades++;
+        }
     }
 }
 
