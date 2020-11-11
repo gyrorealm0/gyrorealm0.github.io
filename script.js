@@ -47,7 +47,7 @@ function updateGame() {
 }
 
 function prestigeCheck() {
-    possiblePrestigePoints = Math.sqrt(currency + currencyMakers * prestigePoints);
+    possiblePrestigePoints = Math.sqrt(currency + currencyMakers * sqrt(prestigePoints));
 }
 
 function makeCurrency() {
@@ -55,7 +55,7 @@ function makeCurrency() {
 }
 
 function prestige() {
-    prestigePoints += Math.sqrt(currency + currencyMakers * prestigePoints);    
+    prestigePoints += Math.sqrt(currency + currencyMakers * sqrt(prestigePoints));
     currencyMakers = 0;
     currency = 0;
     currencyMakerCost = 10;
