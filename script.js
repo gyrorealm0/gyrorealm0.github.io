@@ -1,5 +1,5 @@
 var playerData = [
-    currency = 10,
+    currency = 0,
     currencyMakers = 0,
     currencyMakerCost = 10,
     prestigePoints = 0,
@@ -11,8 +11,11 @@ var playerData = [
     currencyMultiplier = 1,
     prestigeMultiplier = 1,
     upgradeUpgrade = 1,
-    upgradeUpgradeCost = 2,
-    upgradeMultiplier = 1
+    upgradeUpgradeCost = 1,
+    upgradeMultiplier = 1,
+    startCurrency = 1,
+    startCurrencyUpgradeCost = 2000,
+    time = 0
 ]
 
 function fixVar() {
@@ -29,7 +32,8 @@ function updateVar() {
     document.getElementById("currencyUpgradeCost").innerHTML = currencyUpgradeCost;
     document.getElementById("prestigeUpgradeCost").innerHTML = prestigeUpgradeCost;
     document.getElementById("upgradeUpgradeCost").innerHTML = upgradeUpgradeCost;
-    
+    document.getElementById("startCurrencyUpgradeCost").innerHTML = startCurrencyUpgradeCost;
+    document.getElementById("time").innerHTML= time;
 }
 
 function save() {
@@ -57,6 +61,7 @@ function updateGame() {
     makeCurrency()
     prestigeCheck()
     save()
+    time++;
 }
 
 function prestigeCheck() {
@@ -70,7 +75,7 @@ function makeCurrency() {
 function prestige() {
     prestigePoints += Math.sqrt((currency + currencyMakers) / (1 + prestigePoints)) * (prestigeMultiplier) * (upgradeMultiplier);
     currencyMakers = 0;
-    currency = 0;
+    currency = 0 + startCurrency;
     currencyMakerCost = 10;
 }
 
@@ -80,7 +85,7 @@ function load() {
 
 function upgradePrestige() {
     if(currency >= prestigeUpgradeCost) {
-        currenecy -= prestigeUpgradeCost;
+        currency -= prestigeUpgradeCost;
         prestigeUpgradeCost *= 10;
         prestigeMultiplier *= 2;
     }
@@ -104,6 +109,15 @@ function upgradeUpgrade() {
         }
     }
 }
+
+function upgradeStartCurrency() {
+    if(time > startCurrencyUpgradeCost) {
+        startCurrency *= 10;
+        startCurrencyUpgradeCost *= 5;
+    }
+}
+
+
 
 fixVar();
 
