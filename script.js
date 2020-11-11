@@ -56,7 +56,7 @@ function prestige() {
 }
 
 function load() {
-    prestigePoints = document.cookie;
+    prestigePoints = parseFloat(document.cookie);
 }
 
 setInterval(updateGame, (1))
