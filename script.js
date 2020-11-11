@@ -143,6 +143,10 @@ function upgradeStartCurrency() {
     }
 }
 
+function reset() {
+    saveArray = [0, 0, 0, 0, 0, 0, 0];
+}
+
 if(localStorage.getItem("save") === null) {
     localStorage.setItem("save", JSON.stringify(saveArray));
 }
