@@ -1,5 +1,5 @@
 var playerData = [
-    currency = 0,
+    currency = 1,
     currencyMakers = 0,
     currencyMakerCost = 10,
     prestigePoints = 0,
