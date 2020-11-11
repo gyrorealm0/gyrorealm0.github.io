@@ -29,7 +29,7 @@ function fixVar() {
 }
 
 function updateVar() {
-    document.getElementById("currency").innerHTML = Math.round(currency).toFixed(5);
+    document.getElementById("currency").innerHTML = Math.round(currency).toFixed(0);
     document.getElementById("currencyMakers").innerHTML = currencyMakers;
     document.getElementById("currencyMakerCost").innerHTML = currencyMakerCost.toFixed(2);
     document.getElementById("prestigePoints").innerHTML = prestigePoints.toFixed(2);
