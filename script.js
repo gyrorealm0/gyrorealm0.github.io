@@ -73,11 +73,11 @@ function updateGame() {
 }
 
 function priceCheck() {
-    upgradeUpgradeCost = 1 + Math.pow(upgradeUpgrades, 2);
+    upgradeUpgradeCost = 1 + Math.pow(upgradeUpgrades, 5);
     upgradeMultiplier = 1 + Math.pow(upgradeUpgrades, 2);
-    prestigeUpgradeCost = 1 + Math.pow(prestigeUpgrades, 3);
+    prestigeUpgradeCost = 1 + Math.pow(prestigeUpgrades, 5);
     prestigeMultiplier = 1 + Math.pow(prestigeUpgrades, 2);
-    currencyUpgradeCost = 1 + Math.pow(currencyUpgrades, 3);
+    currencyUpgradeCost = 1 + Math.pow(currencyUpgrades, 5);
     currencyMultiplier = 1 + Math.pow(currencyUpgrades, 2);
     currencyMakerCost = 1 + Math.pow(1.1, currencyMakers) * 10;
 }
