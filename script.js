@@ -43,7 +43,7 @@ function updateVar() {
 
 function save() {
     saveArray = [prestigePoints + possiblePrestigePoints, time, currencyUpgrades, prestigeUpgrades, upgradeUpgrades];
-    document.cookie = saveArray;
+    document.cookie = JSON.stringify(saveArray);
 }
 
 function getCurrency() {
