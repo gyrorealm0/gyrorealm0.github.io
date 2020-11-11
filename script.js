@@ -135,6 +135,8 @@ function upgradeStartCurrency() {
 }
 
 fixVar();
+prestige();
 load();
+
 
 setInterval(updateGame, (1))
