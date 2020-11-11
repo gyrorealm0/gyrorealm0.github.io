@@ -12,7 +12,9 @@ var playerData = [
     upgradeMultiplier = 1,
     startCurrency = 1,
     startCurrencyUpgradeCost = 2000,
-    time = 0
+    time = 0,
+    currencyUpgrades = 0,
+    prestigeUpgrades = 0
 ]
 
 function fixVar() {
@@ -31,6 +33,8 @@ function updateVar() {
     document.getElementById("upgradeUpgradeCost").innerHTML = upgradeUpgradeCost;
     document.getElementById("startCurrencyUpgradeCost").innerHTML = startCurrencyUpgradeCost;
     document.getElementById("time").innerHTML= time;
+    document.getElementById("currencyUpgrades").innerHTML = currencyUpgrades;
+    document.getElementById("prestigeUpgrades").innerHTML = prestigeUpgrades;
 }
 
 function save() {
@@ -85,6 +89,7 @@ function upgradePrestige() {
         currency -= prestigeUpgradeCost;
         prestigeUpgradeCost *= 3;
         prestigeMultiplier *= 2;
+        prestigeUpgrades++;
     }
 }
 
@@ -93,6 +98,7 @@ function upgradeCurrency() {
         prestigePoints -= currencyUpgradeCost;
         currencyUpgradeCost *= 3;
         currencyMultiplier *= 2;
+        currencyUpgrades++;
     }
 }
 
@@ -101,7 +107,7 @@ function upgradeUpgrade() {
         if(prestigeUpgrades >= upgradeUpgradeCost) {
             currencyUpgrades -= upgradeUpgradeCost;
             prestigeUpgrades -= upgradeUpgradeCost;
-            upgradeUpgradeCost *= 5;
+            upgradeUpgradeCost *= 2;
             upgradeMultiplier *= 2;
         }
     }
