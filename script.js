@@ -67,8 +67,19 @@ function updateGame() {
     updateVar()
     makeCurrency()
     prestigeCheck()
+    priceCheck()
     save()
     time++;
+}
+
+function priceCheck() {
+    upgradeUpgradeCost = Math.pow(upgradeUpgrades, 2);
+    upgradeMultiplier = Math.pow(upgradeUpgrades, 2);
+    prestigeUpgradeCost = Math.pow(prestigeUpgrades, 3);
+    prestigeMultiplier = Math.pow(prestigeUpgrades, 2);
+    currencyUpgradeCost = Math.pow(currencyUpgrades, 3);
+    currencyMultiplier = Math.pow(currencyUpgrades, 2);
+    currencyMakerCost = Math.pow(1.1, currencyMakers) * 10;
 }
 
 function prestigeCheck() {
@@ -100,8 +111,6 @@ function load() {
 function upgradePrestige() {
     if(currency >= prestigeUpgradeCost) {
         currency -= prestigeUpgradeCost;
-        prestigeUpgradeCost = Math.pow(prestigeUpgrades, 3);
-        prestigeMultiplier = Math.pow(prestigeUpgrades, 2);
         prestigeUpgrades++;
     }
 }
@@ -109,8 +118,6 @@ function upgradePrestige() {
 function upgradeCurrency() {
     if(prestigePoints >= currencyUpgradeCost) {
         prestigePoints -= currencyUpgradeCost;
-        currencyUpgradeCost = Math.pow(currencyUpgrades, 3);
-        currencyMultiplier = Math.pow(currencyUpgrades, 2);
         currencyUpgrades++;
     }
 }
@@ -121,8 +128,6 @@ function upgradeUpgrade() {
             currencyUpgrades -= upgradeUpgradeCost;
             prestigeUpgrades -= upgradeUpgradeCost;
             upgradeUpgrades++;
-            upgradeUpgradeCost = Math.pow(upgradeUpgrades, 2);
-            upgradeMultiplier = upgradeUpgradeCost;
         }
     }
 }
