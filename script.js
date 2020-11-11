@@ -29,7 +29,7 @@ function fixVar() {
 }
 
 function updateVar() {
-    document.getElementById("currency").innerHTML = Math.round(currency);
+    document.getElementById("currency").innerHTML = Math.round(currency).toFixed(5);
     document.getElementById("currencyMakers").innerHTML = currencyMakers;
     document.getElementById("currencyMakerCost").innerHTML = currencyMakerCost.toFixed(2);
     document.getElementById("prestigePoints").innerHTML = prestigePoints.toFixed(2);
@@ -109,7 +109,7 @@ function load() {
     upgradeUpgrades = saveArray[4];
     currency = saveArray[5];
     currencyMakers = saveArray[6];
-    startCurrency = saveArray[7];
+    startCurrencyUpgrades = saveArray[7];
 }
 
 function upgradePrestige() {
