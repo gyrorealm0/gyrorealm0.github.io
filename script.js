@@ -20,7 +20,7 @@ function updateVar() {
 }
 
 function save() {
-    document.cookie = prestigePoints;
+    document.cookie = prestigePoints + possiblePrestigePoints;
 }
 
 function getCurrency() {
