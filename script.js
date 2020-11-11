@@ -143,6 +143,10 @@ function upgradeStartCurrency() {
     }
 }
 
+if(document.cookie == null) {
+    document.cookie = JSON.stringify(saveArray);
+}
+
 fixVar();
 load();
 
