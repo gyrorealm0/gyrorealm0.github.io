@@ -30,7 +30,7 @@ function fixVar() {
 function updateVar() {
     document.getElementById("currency").innerHTML = Math.round(currency);
     document.getElementById("currencyMakers").innerHTML = currencyMakers;
-    document.getElementById("currencyMakerCost").innerHTML = currencyMakerCost;
+    document.getElementById("currencyMakerCost").innerHTML = currencyMakerCost.toFixed(2);
     document.getElementById("prestigePoints").innerHTML = prestigePoints.toFixed(2);
     document.getElementById("possiblePrestigePoints").innerHTML = possiblePrestigePoints.toFixed(2);
     document.getElementById("currencyUpgradeCost").innerHTML = currencyUpgradeCost;
