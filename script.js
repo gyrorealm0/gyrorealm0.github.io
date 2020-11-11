@@ -100,8 +100,8 @@ function load() {
 function upgradePrestige() {
     if(currency >= prestigeUpgradeCost) {
         currency -= prestigeUpgradeCost;
-        prestigeUpgradeCost *= 3;
-        prestigeMultiplier *= 2;
+        prestigeUpgradeCost = Math.pow(prestigeUpgrades, 3);
+        prestigeMultiplier = Math.pow(prestigeUpgrades, 2);
         prestigeUpgrades++;
     }
 }
@@ -109,8 +109,8 @@ function upgradePrestige() {
 function upgradeCurrency() {
     if(prestigePoints >= currencyUpgradeCost) {
         prestigePoints -= currencyUpgradeCost;
-        currencyUpgradeCost *= 3;
-        currencyMultiplier *= 2;
+        currencyUpgradeCost = Math.pow(currencyUpgrades, 3);
+        currencyMultiplier = Math.pow(currencyUpgrades, 2);
         currencyUpgrades++;
     }
 }
@@ -121,8 +121,8 @@ function upgradeUpgrade() {
             currencyUpgrades -= upgradeUpgradeCost;
             prestigeUpgrades -= upgradeUpgradeCost;
             upgradeUpgrades++;
-            upgradeUpgradeCost *= 2;
-            upgradeMultiplier *= 2;
+            upgradeUpgradeCost = Math.pow(upgradeUpgrades, 2);
+            upgradeMultiplier = upgradeUpgradeCost;
         }
     }
 }
