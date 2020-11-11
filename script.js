@@ -43,6 +43,7 @@ function updateGame() {
     updateVar()
     makeCurrency()
     prestigeCheck()
+    save()
 }
 
 function prestigeCheck() {
