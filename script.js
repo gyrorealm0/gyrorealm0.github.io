@@ -143,8 +143,8 @@ function upgradeStartCurrency() {
     }
 }
 
-if(document.cookie.indexOf('cookie_name=') === -1) {
-    document.cookie = JSON.stringify(saveArray);
+if(localStorage.getItem("save").length < 1) {
+    localStorage.setItem("save", JSON.stringify(saveArray));
 }
 
 fixVar();
