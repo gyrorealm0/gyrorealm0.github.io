@@ -143,7 +143,7 @@ function upgradeStartCurrency() {
     }
 }
 
-if(document.cookie == null) {
+if(document.cookie.indexOf('cookie_name=')) {
     document.cookie = JSON.stringify(saveArray);
 }
 
