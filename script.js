@@ -22,6 +22,8 @@ var playerData = [
 
 function fixVar() {
     prestigePoints = 0;
+    time = 0;
+    currency = 0;
     possiblePrestigePoints = 0;
 }
 
