@@ -3,7 +3,7 @@ var playerData = [
     currencyMakers = 0,
     currencyMakerCost = 10,
     prestigePoints = 0,
-    possiblePrestigePoints = 0,
+    possiblePrestigePoints = 0,	
     currencyUpgradeCost = 10,
     prestigeUpgradeCost = 1000,
     currencyMultiplier = 1,
@@ -83,7 +83,7 @@ function load() {
 function upgradePrestige() {
     if(currency >= prestigeUpgradeCost) {
         currency -= prestigeUpgradeCost;
-        prestigeUpgradeCost *= 10;
+        prestigeUpgradeCost *= 3;
         prestigeMultiplier *= 2;
     }
 }
@@ -91,7 +91,7 @@ function upgradePrestige() {
 function upgradeCurrency() {
     if(prestigePoints >= currencyUpgradeCost) {
         prestigePoints -= currencyUpgradeCost;
-        currencyUpgradeCost *= 10;
+        currencyUpgradeCost *= 3;
         currencyMultiplier *= 2;
     }
 }
