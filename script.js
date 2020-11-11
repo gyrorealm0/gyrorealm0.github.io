@@ -80,7 +80,7 @@ function priceCheck() {
     currencyUpgradeCost = 1 + Math.pow(currencyUpgrades, 5);
     currencyMultiplier = 1 + Math.pow(currencyUpgrades, 2);
     currencyMakerCost = 1 + Math.pow(1.1, currencyMakers) * 10;
-    startCurrencyUpgradeCost = 1 + Math.pow(5, Math.log(startCurrency, 10)) * 2000;
+    startCurrencyUpgradeCost = 1 + Math.pow(Math.log(startCurrency, 10), 5) * 2000;
 }
 
 function prestigeCheck() {
