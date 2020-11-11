@@ -26,7 +26,6 @@ function fixVar() {
 }
 
 function updateVar() {
-    document.getElementById("test").innerHTML = test;
     document.getElementById("currency").innerHTML = Math.round(currency);
     document.getElementById("currencyMakers").innerHTML = currencyMakers;
     document.getElementById("currencyMakerCost").innerHTML = currencyMakerCost;
