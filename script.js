@@ -17,7 +17,7 @@ var playerData = [
     currencyUpgrades = 0,
     prestigeUpgrades = 0,
     test = "",
-    saveArray = [0, 0, 0, 0, 0]
+    saveArray = [0, 0, 0, 0, 0, 0, 0]
 ]
 
 function fixVar() {
@@ -25,7 +25,6 @@ function fixVar() {
     time = 0;
     currency = 0;
     possiblePrestigePoints = 0;
-    
 }
 
 function updateVar() {
@@ -44,7 +43,7 @@ function updateVar() {
 }
 
 function save() {
-    saveArray = [prestigePoints + possiblePrestigePoints, time, currencyUpgrades, prestigeUpgrades, upgradeUpgrades];
+    saveArray = [prestigePoints + possiblePrestigePoints, time, currencyUpgrades, prestigeUpgrades, upgradeUpgrades, currency, currencyMakers];
     document.cookie = JSON.stringify(saveArray);
 }
 
@@ -94,6 +93,8 @@ function load() {
     currencyUpgrades = saveArray[2];
     prestigeUpgrades = saveArray[3];
     upgradeUpgrades = saveArray[4];
+    currency = saveArray[5];
+    currencyMakers = saveArray[6];
 }
 
 function upgradePrestige() {
