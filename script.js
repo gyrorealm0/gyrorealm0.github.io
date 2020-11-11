@@ -6,6 +6,11 @@ var playerData = [
     possiblePrestigePoints = 0
 ]
 
+function fixVar() {
+    prestigePoints = 0;
+    possiblePrestigePoints = 0;
+}
+
 function updateVar() {
     document.getElementById("currency").innerHTML = Math.round(currency);
     document.getElementById("currencyMakers").innerHTML = currencyMakers;
@@ -58,5 +63,7 @@ function prestige() {
 function load() {
     prestigePoints = parseFloat(document.cookie);
 }
+
+fixVar();
 
 setInterval(updateGame, (1))
