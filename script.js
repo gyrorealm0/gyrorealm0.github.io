@@ -17,7 +17,7 @@ var playerData = [
     currencyUpgrades = 0,
     prestigeUpgrades = 0,
     test = "",
-    saveArray = [prestigePoints + possiblePrestigePoints, time, currencyUpgrades, prestigeUpgrades, upgradeUpgrades]
+    saveArray = [0, 0, 0, 0, 0]
 ]
 
 function fixVar() {
@@ -127,11 +127,6 @@ function upgradeStartCurrency() {
 }
 
 fixVar();
-
-saveArray = JSON.parse(document.cookie);
-
-if(saveArray[0] > 0) {
-    load();
-}
+load();
 
 setInterval(updateGame, (1))
