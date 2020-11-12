@@ -83,9 +83,6 @@ function updateGame() {
     priceCheck()
     save()
     time++;
-    if(currency < 1){
-        currency++;
-    }
 }
 
 function priceCheck() {
