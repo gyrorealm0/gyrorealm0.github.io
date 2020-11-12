@@ -101,11 +101,11 @@ function updateGame() {
 
 function priceCheck() {
     upgradeUpgradeCost = Math.ceil(Math.pow(1.1, upgradeUpgrades));
-    upgradeMultiplier = 1 + Math.pow(2, upgradeUpgrades);
+    upgradeMultiplier = 1 + Math.pow(1.1, upgradeUpgrades);
     prestigeUpgradeCost = Math.ceil(Math.pow(1.1, prestigeUpgrades));
-    prestigeMultiplier =  1 + Math.pow(prestigeUpgrades, 2);
+    prestigeMultiplier =  1 + Math.pow(prestigeUpgrades, 1.1);
     currencyUpgradeCost = Math.ceil(Math.pow(1.1, currencyUpgrades));
-    currencyMultiplier = 1 + Math.pow(currencyUpgrades, 2);
+    currencyMultiplier = 1 + Math.pow(currencyUpgrades, 1.1);
     currencyMakerCost = Math.pow(1.1, currencyMakers);
     startCurrencyUpgradeCost = 1 + Math.pow(startCurrencyUpgrades, 5) * 2000;
     startCurrency = Math.pow(startCurrencyUpgrades, 10);
