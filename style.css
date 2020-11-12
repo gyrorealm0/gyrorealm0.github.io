@@ -15,16 +15,16 @@ button {
   padding: 1px 6px;
   font-family: Typewriter;
   transition-duration: 0.3s;
-  background: black;
-  border: 2px solid white;
+  background: #455A64;
+  border: 2px solid #127A20;
   border-radius: 4px;
-  color: white;
+  color: black;
   font-size: 0.8em;
   margin-bottom: 10px;
 }
 
 .button:hover {
-  background-color: #888888;
+  background-color: #127A20;
   color: white;
 }
 
