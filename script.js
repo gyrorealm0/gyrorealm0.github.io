@@ -155,8 +155,8 @@ function upgradeUpgrade() {
     if(temp > 0){
         if(temp2 > 0){
         upgradeUpgrades ++;
-        currencyUpgrades -= upgradeUpgradeCost);
-        prestigeUpgrades -= upgradeUpgradeCost);
+        currencyUpgrades -= upgradeUpgradeCost;
+        prestigeUpgrades -= upgradeUpgradeCost;
         }
     }
 }
