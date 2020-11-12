@@ -33,7 +33,7 @@ function purchase(cur, cos, mul) {
     if(cur < cos){
         return 0;
     }
-    return Math.floor(Math.log(cur*(mul-1)/cos + 1) / Math.log(mul));
+    return Math.floor(Math.log10(cur*(mul-1)/cos + 1) / Math.log10(mul));
 }
 
 function updateVar() {
@@ -68,10 +68,11 @@ function getCurrency() {
 }
 
 function buyCurrencyMaker() {
+    currencyMakerCost = Math.pow(1.1, currencyMakers);
     temp = purchase(currency, currencyMakerCost, 1.1);
     currencyMakers += temp;
     if(temp > 0){
-        currency -= Math.pow(1.1, temp) * currencyMakerCost;
+        currency -= Math.pow(1.1, temp - 1) * currencyMakerCost;
     }
 }
 
@@ -94,7 +95,7 @@ function priceCheck() {
     prestigeMultiplier = 1 + Math.pow(prestigeUpgrades, 2);
     currencyUpgradeCost = 1 + Math.pow(currencyUpgrades, 5);
     currencyMultiplier = 1 + Math.pow(currencyUpgrades, 2);
-    currencyMakerCost = 1 + Math.pow(1.1, currencyMakers);
+    currencyMakerCost = Math.pow(1.1, currencyMakers);
     startCurrencyUpgradeCost = 1 + Math.pow(startCurrencyUpgrades, 5) * 2000;
     startCurrency = Math.pow(startCurrencyUpgrades, 10);
 }	
@@ -179,4 +180,4 @@ if(localStorage.getItem("save") === null) {
 fixVar();
 load();
 
-setInterval(updateGame, (10))
+setInterval(updateGame, (100))
