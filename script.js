@@ -157,8 +157,8 @@ function upgradeCurrency() {
 function upgradeUpgrade() {
     temp = currencyUpgrades - upgradeUpgradeCost;
     temp2 = prestigeUpgrades - upgradeUpgradeCost;
-    if(temp > 0){
-        if(temp2 > 0){
+    if(temp >= 0){
+        if(temp2 >= 0){
         upgradeUpgrades ++;
         currencyUpgrades -= upgradeUpgradeCost;
         prestigeUpgrades -= upgradeUpgradeCost;
