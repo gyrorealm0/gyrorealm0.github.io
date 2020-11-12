@@ -1,1 +1,1 @@
-run index.html in your browser
+https://gyrorealm0.github.io/
