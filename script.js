@@ -39,9 +39,9 @@ function purchase(cur, cos, mul) {
 function updateVar() {
     document.getElementById("currency").innerHTML = Math.round(currency).toFixed(0);
     document.getElementById("currencyMakers").innerHTML = currencyMakers;
-    document.getElementById("currencyMakerCost").innerHTML = currencyMakerCost.toFixed(2);
-    document.getElementById("prestigePoints").innerHTML = prestigePoints.toFixed(2);
-    document.getElementById("possiblePrestigePoints").innerHTML = possiblePrestigePoints.toFixed(2);
+    document.getElementById("currencyMakerCost").innerHTML = currencyMakerCost.toFixed(0);
+    document.getElementById("prestigePoints").innerHTML = prestigePoints.toFixed(0);
+    document.getElementById("possiblePrestigePoints").innerHTML = possiblePrestigePoints.toFixed(0);
     document.getElementById("currencyUpgradeCost").innerHTML = currencyUpgradeCost;
     document.getElementById("prestigeUpgradeCost").innerHTML = prestigeUpgradeCost;
     document.getElementById("upgradeUpgradeCost").innerHTML = upgradeUpgradeCost;
@@ -63,9 +63,14 @@ function save() {
     localStorage.setItem("save", JSON.stringify(saveArray));
 }
 
-function getCurrency() {
-    currency++;
-    updateVar()
+function maxAll() {
+    buyCurrencyMaker();
+    updateVar();
+    upgradeCurrency();
+    updateVar();
+    upgradePrestige();
+    updateVar();
+    upgradeUpgrade();
 }
 
 function buyCurrencyMaker() {
@@ -84,11 +89,14 @@ function updateGame() {
     priceCheck()
     save()
     time++;
+    if(currency < 1){
+        currency = 1;
+    }
 }
 
 function priceCheck() {
     upgradeUpgradeCost = Math.ceil(Math.pow(1.1, upgradeUpgrades));
-    upgradeMultiplier = 1 + Math.pow(upgradeUpgrades, 2);
+    upgradeMultiplier = 1 + Math.pow(2, upgradeUpgrades);
     prestigeUpgradeCost = Math.ceil(Math.pow(1.1, prestigeUpgrades));
     prestigeMultiplier =  1 + Math.pow(prestigeUpgrades, 2);
     currencyUpgradeCost = Math.ceil(Math.pow(1.1, currencyUpgrades));
@@ -107,7 +115,7 @@ function makeCurrency() {
 }
 
 function prestige() {
-    prestigePoints += (Math.sqrt(currency + currencyMakers) / (1 + prestigePoints)) * (prestigeMultiplier) * (upgradeMultiplier);
+    prestigePoints += (Math.sqrt(currency + currencyMakers)) + (prestigeMultiplier) + (upgradeMultiplier);
     currencyMakers = 0;
     currency = 0 + startCurrency;
     currencyMakerCost = 10;
