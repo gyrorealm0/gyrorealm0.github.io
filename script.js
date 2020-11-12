@@ -154,9 +154,9 @@ function upgradeUpgrade() {
     temp2 = purchase(currencyUpgrades, upgradeUpgradeCost, 1.1);
     if(temp > 0){
         if(temp2 > 0){
-        upgradeUpgrades += Math.ceil((temp + temp2) / 2);
-        currencyUpgrades -= Math.ceil(Math.pow(1.1, temp - 1) * upgradeUpgradeCost);
-        prestigeUpgrades -= Math.ceil(Math.pow(1.1, temp2 - 1) * upgradeUpgradeCost);
+        upgradeUpgrades ++;
+        currencyUpgrades -= upgradeUpgradeCost);
+        prestigeUpgrades -= upgradeUpgradeCost);
         }
     }
 }
