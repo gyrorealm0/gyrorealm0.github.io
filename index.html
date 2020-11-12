@@ -18,13 +18,9 @@
 
 <button class ="button currency" onclick="getCurrency()">Currency++</button>
       
-<button class="button currencyMaker" onclick="buyCurrencyMaker()">Currency Maker Cost: <span id="currencyMakerCost"></span></button>
- 
-<button class="button prestige" onclick="prestige()">Prestige: <span id="possiblePrestigePoints"></span></button><br>
-<button class="button currencyUpgrade" onclick="upgradeCurrency()">Upgrade Currency: <span id="currencyUpgradeCost"></span> prestige</button><br>
-<button class="button prestigeUpgrade" onclick="upgradePrestige()">Upgrade Prestige: <span id="prestigeUpgradeCost"></span> currency</button><br>
-<button class="button upgradeUpgrades" onclick="upgradeUpgrade()">Upgrade Upgrades: <span id="upgradeUpgradeCost"></span> of each other upgrades</button><br>
-<button class="button startCurrencyUpgrade" onclick="upgradeStartCurrency()">Upgrade starting currency: <span id="startCurrencyUpgradeCost"></span> time</button>
+
+
+
 
 <br>
 <br><button class=reset" onclick="reset()">reset</button>
@@ -33,6 +29,23 @@ current endgame is infinity
 <br><br>
 coded in notepad!
 click the buttons to make the number bigger
+
+
+<div id = currency makers>
+<button class="button currencyMaker" onclick="buyCurrencyMaker()">Currency Maker Cost: <span id="currencyMakerCost"></span></button>
+ 
+</div>
+
+<div id = upgrades>
+<button class="button currencyUpgrade" onclick="upgradeCurrency()">Upgrade Currency: <span id="currencyUpgradeCost"></span> prestige</button><br>
+<button class="button prestigeUpgrade" onclick="upgradePrestige()">Upgrade Prestige: <span id="prestigeUpgradeCost"></span> currency</button><br>
+<button class="button upgradeUpgrades" onclick="upgradeUpgrade()">Upgrade Upgrades: <span id="upgradeUpgradeCost"></span> of each other upgrades</button><br>
+<button class="button startCurrencyUpgrade" onclick="upgradeStartCurrency()">Upgrade starting currency: <span id="startCurrencyUpgradeCost"></span> time</button>
+</div>
+
+<div id = prestige>
+<button class="button prestige" onclick="prestige()">Prestige: <span id="possiblePrestigePoints"></span></button><br>
+</div>
 <br><br>
 <img src="picture.png">
 <br><br>
