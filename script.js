@@ -172,4 +172,4 @@ if(localStorage.getItem("save") === null) {
 fixVar();
 load();
 
-setInterval(updateGame, (10))
+setInterval(updateGame, (1000))
