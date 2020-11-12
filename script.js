@@ -115,7 +115,7 @@ function makeCurrency() {
 }
 
 function prestige() {
-    prestigePoints += (Math.sqrt(currency + currencyMakers)) + (prestigeMultiplier) + (upgradeMultiplier);
+    prestigePoints += possiblePrestigePoints;
     currencyMakers = 0;
     currency = 0 + startCurrency;
     currencyMakerCost = 10;
