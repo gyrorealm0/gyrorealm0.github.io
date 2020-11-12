@@ -37,15 +37,15 @@ function purchase(cur, cos, mul) {
 }
 
 function updateVar() {
-    document.getElementById("currency").innerHTML = Math.round(currency).toFixed(0);
+    document.getElementById("currency").innerHTML = Math.round(currency).toPrecision(3);
     document.getElementById("currencyMakers").innerHTML = currencyMakers;
-    document.getElementById("currencyMakerCost").innerHTML = currencyMakerCost.toFixed(0);
-    document.getElementById("prestigePoints").innerHTML = prestigePoints.toFixed(0);
-    document.getElementById("possiblePrestigePoints").innerHTML = possiblePrestigePoints.toFixed(0);
-    document.getElementById("currencyUpgradeCost").innerHTML = currencyUpgradeCost;
-    document.getElementById("prestigeUpgradeCost").innerHTML = prestigeUpgradeCost;
-    document.getElementById("upgradeUpgradeCost").innerHTML = upgradeUpgradeCost;
-    document.getElementById("startCurrencyUpgradeCost").innerHTML = startCurrencyUpgradeCost;
+    document.getElementById("currencyMakerCost").innerHTML = currencyMakerCost.toPrecision(3);
+    document.getElementById("prestigePoints").innerHTML = prestigePoints.toPrecision(3);
+    document.getElementById("possiblePrestigePoints").innerHTML = possiblePrestigePoints.toPrecision(3);
+    document.getElementById("currencyUpgradeCost").innerHTML = currencyUpgradeCost.toPrecision(3);
+    document.getElementById("prestigeUpgradeCost").innerHTML = prestigeUpgradeCost.toPrecision(3);
+    document.getElementById("upgradeUpgradeCost").innerHTML = upgradeUpgradeCost.toPrecision(3);
+    document.getElementById("startCurrencyUpgradeCost").innerHTML = startCurrencyUpgradeCost.toPrecision(3);
     document.getElementById("time").innerHTML= time;
     document.getElementById("currencyUpgrades").innerHTML = currencyUpgrades;
     document.getElementById("prestigeUpgrades").innerHTML = prestigeUpgrades;
