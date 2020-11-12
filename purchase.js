@@ -10,7 +10,7 @@ function purchase(currency, cost, max) {
     return 1;
 }
 
-function purcahse(currency, cost, multiplier, max) {
+function purchase(currency, cost, multiplier, max) {
     if(currency < cost) {
         return 0;
     }
