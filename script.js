@@ -71,6 +71,9 @@ function maxAll() {
     upgradePrestige();
     updateVar();
     upgradeUpgrade();
+    if(possiblePrestigePoints > prestigePoints){
+        prestige();
+    }
 }
 
 function buyCurrencyMaker() {
