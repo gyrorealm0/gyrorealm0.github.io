@@ -10,3 +10,13 @@ body {
   color: white;
   text-align: center;
 }
+
+button {
+  font-family: Typewriter;
+  transition-duration: 0.3s;
+  background: black;
+  border: 2px solid white;
+  border-radius: 3px;
+  color: white;
+  font-size: 0.8em;
+}
