@@ -6,7 +6,7 @@
 body {
   font-family: Typewriter;
   margin: 2em;
-  background: #001626;
+  background: #1C1C1C;
   color: white;
   text-align: center;
 }
@@ -29,9 +29,9 @@ button {
 }
 
 .test {
-  background: #1c2a62;
+  background: #455A64;
   font-weight: bold;
-  border: 2px solid #00875a;
+  border: 2px solid #1565C0;
   border-radius: 4px;
   transition-duration: 0.2s;
   font-size: 1.3em;
@@ -39,6 +39,6 @@ button {
 }
 
 .test:hover {
-  background-color: #00875a;
+  background-color: #1565C0;
   color: white;
 }
