@@ -107,7 +107,7 @@ function priceCheck() {
 }	
 
 function prestigeCheck() {
-    possiblePrestigePoints = (Math.sqrt(currency + currencyMakers) / (1 + prestigePoints)) * (prestigeMultiplier) * (upgradeMultiplier);
+    possiblePrestigePoints = (Math.sqrt(currency + currencyMakers)) * (prestigeMultiplier) * (upgradeMultiplier);
 }
 
 function makeCurrency() {
