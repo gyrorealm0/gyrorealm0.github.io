@@ -9,12 +9,11 @@
 
 <h1>Currency: <span id="currency"></span></h1>
     
-<h3>Currency Makers: <span id="currencyMakers"></span></h3>
 
-<h3>Prestige: <span id="prestigePoints"></span></h3> 
+
+
 <h4>Time: <span id="time"></span></h4>
-<h4>Currency Upgrades: <span id="currencyUpgrades"></span></h4>
-<h4>Prestige Upgrades: <span id="prestigeUpgrades"></span></h4>
+
 
 <button class ="button currency" onclick="getCurrency()">Currency++</button>
       
@@ -32,11 +31,14 @@ click the buttons to make the number bigger
 
 
 <div id = currency makers>
+<h3>Currency Makers: <span id="currencyMakers"></span></h3>
 <button class="button currencyMaker" onclick="buyCurrencyMaker()">Currency Maker Cost: <span id="currencyMakerCost"></span></button>
  
 </div>
 
 <div id = upgrades>
+<h4>Currency Upgrades: <span id="currencyUpgrades"></span></h4>
+<h4>Prestige Upgrades: <span id="prestigeUpgrades"></span></h4>
 <button class="button currencyUpgrade" onclick="upgradeCurrency()">Upgrade Currency: <span id="currencyUpgradeCost"></span> prestige</button><br>
 <button class="button prestigeUpgrade" onclick="upgradePrestige()">Upgrade Prestige: <span id="prestigeUpgradeCost"></span> currency</button><br>
 <button class="button upgradeUpgrades" onclick="upgradeUpgrade()">Upgrade Upgrades: <span id="upgradeUpgradeCost"></span> of each other upgrades</button><br>
@@ -44,6 +46,7 @@ click the buttons to make the number bigger
 </div>
 
 <div id = prestige>
+<h3>Prestige: <span id="prestigePoints"></span></h3> 
 <button class="button prestige" onclick="prestige()">Prestige: <span id="possiblePrestigePoints"></span></button><br>
 </div>
 <br><br>
