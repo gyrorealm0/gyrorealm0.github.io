@@ -29,6 +29,13 @@ function fixVar() {
     possiblePrestigePoints = 0;
 }
 
+function purchase(cur, cos, mul) {
+    if(cur < cos){
+        return 0;
+    }
+    return Math.ceil(Math.log(1 + (cur / cos), mul));
+}
+
 function updateVar() {
     document.getElementById("currency").innerHTML = Math.round(currency).toFixed(0);
     document.getElementById("currencyMakers").innerHTML = currencyMakers;
@@ -61,14 +68,7 @@ function getCurrency() {
 }
 
 function buyCurrencyMaker() {
-    while(currency >= currencyMakerCost) {
-        if (currency >= currencyMakerCost) {
-        currency = currency - currencyMakerCost;
-        currencyMakers++;
-        currencyMakerCost = Math.round(currencyMakerCost * 1.1);
-        updateVar()
-        }
-    }
+    currencyMakers += purchase(currency, currencyMakerCost, 1.1);
 }
 
 function updateGame() {
