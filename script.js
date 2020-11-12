@@ -90,7 +90,9 @@ function updateGame() {
     makeCurrency()
     prestigeCheck()
     priceCheck()
-    save()
+    if(time%100 == 0){
+    save();
+    }
     time++;
     if(currency < 1){
         currency = 1;
