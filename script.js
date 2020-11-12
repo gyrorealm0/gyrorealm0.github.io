@@ -33,7 +33,7 @@ function purchase(cur, cos, mul) {
     if(cur < cos){
         return 0;
     }
-    return Math.ceil(Math.log(1 + (cur / cos), mul));
+    return Math.floor(Math.log(cur*(mul-1)/cos + 1) / Math.log(mul));
 }
 
 function updateVar() {
@@ -68,7 +68,11 @@ function getCurrency() {
 }
 
 function buyCurrencyMaker() {
-    currencyMakers += purchase(currency, currencyMakerCost, 1.1);
+    temp = purchase(currency, currencyMakerCost, 1.1);
+    currencyMakers += temp;
+    if(temp > 0){
+        currency -= Math.pow(1.1, temp) * currencyMakerCost;
+    }
 }
 
 function updateGame() {
@@ -78,6 +82,9 @@ function updateGame() {
     priceCheck()
     save()
     time++;
+    if(currency < 1){
+        currency++;
+    }
 }
 
 function priceCheck() {
@@ -87,7 +94,7 @@ function priceCheck() {
     prestigeMultiplier = 1 + Math.pow(prestigeUpgrades, 2);
     currencyUpgradeCost = 1 + Math.pow(currencyUpgrades, 5);
     currencyMultiplier = 1 + Math.pow(currencyUpgrades, 2);
-    currencyMakerCost = 1 + Math.pow(currencyMakers, 1.1) * 10;
+    currencyMakerCost = 1 + Math.pow(1.1, currencyMakers);
     startCurrencyUpgradeCost = 1 + Math.pow(startCurrencyUpgrades, 5) * 2000;
     startCurrency = Math.pow(startCurrencyUpgrades, 10);
 }	
