@@ -31,13 +31,13 @@ button {
 .test {
   background: #E0E0E0;
   font-weight: bold;
-  border: 2px solid #4980CC;
+  border: 2px solid #3c3c3e;
   border-radius: 4px;
   transition-duration: 0.2s;
   font-size: 1em;
 }
 
 .test:hover {
-  background-color: #4980CC;
+  background-color: #3c3c3e;
   color: white;
 }
