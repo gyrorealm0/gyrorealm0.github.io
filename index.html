@@ -19,7 +19,9 @@
       
 
 
-
+<button class="test" onclick="switchTabs('upgrades')">Upgrades</button>
+<button class="test2" onclick="switchTabs('currencyMakers')">Currency Makers</button>
+<button class="test3" onclick="switchTabs('prestige')">Prestige</button>
 
 <br>
 <br><button class=reset" onclick="reset()">reset</button>
@@ -30,13 +32,13 @@ coded in notepad!
 click the buttons to make the number bigger
 
 
-<div id = currency makers>
+<div id="currencyMakers" style="display: none;">
 <h3>Currency Makers: <span id="currencyMakers"></span></h3>
 <button class="button currencyMaker" onclick="buyCurrencyMaker()">Currency Maker Cost: <span id="currencyMakerCost"></span></button>
  
 </div>
 
-<div id = upgrades>
+<div id="upgrades" style="display: none;">
 <h4>Currency Upgrades: <span id="currencyUpgrades"></span></h4>
 <h4>Prestige Upgrades: <span id="prestigeUpgrades"></span></h4>
 <button class="button currencyUpgrade" onclick="upgradeCurrency()">Upgrade Currency: <span id="currencyUpgradeCost"></span> prestige</button><br>
@@ -45,7 +47,7 @@ click the buttons to make the number bigger
 <button class="button startCurrencyUpgrade" onclick="upgradeStartCurrency()">Upgrade starting currency: <span id="startCurrencyUpgradeCost"></span> time</button>
 </div>
 
-<div id = prestige>
+<div id="prestige" style="display: none;">
 <h3>Prestige: <span id="prestigePoints"></span></h3> 
 <button class="button prestige" onclick="prestige()">Prestige: <span id="possiblePrestigePoints"></span></button><br>
 </div>

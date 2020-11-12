@@ -18,7 +18,7 @@ var playerData = [
     currencyUpgrades = 0,
     prestigeUpgrades = 0,
     test = "",
-    saveArray = [0, 0, 0, 0, 0, 0, 0, 1]
+    saveArray = [0, 0, 0, 0, 0, 0, 0, 1]	
 ]
 
 function fixVar() {
@@ -41,6 +41,12 @@ function updateVar() {
     document.getElementById("time").innerHTML= time;
     document.getElementById("currencyUpgrades").innerHTML = currencyUpgrades;
     document.getElementById("prestigeUpgrades").innerHTML = prestigeUpgrades;
+}
+
+function switchTabs(newtab) {
+  document.getElementById(tab).style.display = "none";
+  document.getElementById(newtab).style.display = "block";
+  tab = newtab;
 }
 
 function save() {
