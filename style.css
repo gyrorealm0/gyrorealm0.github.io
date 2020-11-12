@@ -19,6 +19,7 @@ button {
   border-radius: 4px;
   color: white;
   font-size: 0.8em;
+  margin-bottom: 5px;
 }
 
 .button:hover {
