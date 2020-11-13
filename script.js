@@ -117,12 +117,13 @@ function priceCheck() {
 function prestigeCheck() {
     possiblePrestigePoints = (Math.sqrt(currency * currencyMakers)) * (prestigeMultiplier) * (upgradeMultiplier);
     possibleSuperPrestigePoints = Math.log10(1 + prestigePoints / (1 + superPrestigePoints));
+    if(possibleSuperPrestigePoints < 0) possibleSuperPrestigePoints = 0;
     possibleIncrementalPoints = Math.log10((1 + superPrestigePoints) / (1 + incrementalPoints));
     if(possibleIncrementalPoints < 0) possibleIncrementalPoints = 0;
 }
 
 function makeCurrency() {
-    currency += Math.pow(currencyMultiplier * currencyMakers * prestigePoints * (1 + superPrestigePoints * superPrestigePoints), Math.sqrt(1 + incrementalPoints));
+    currency += Math.sqrt(Math.pow(currencyMultiplier * currencyMakers * prestigePoints * (1 + superPrestigePoints * superPrestigePoints), Math.sqrt(1 + incrementalPoints)));
 }
 
 function prestige() {
