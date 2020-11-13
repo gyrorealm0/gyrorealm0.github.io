@@ -36,11 +36,11 @@ function purchase(cur, cos, mul) {
     if(cur < cos * mul + cos){
         return 1;
     }
-    return Math.floor(Math.log(cur / cos) / Math.log(mul));
+    return Math.floor(Math.log(cur * (mul - 1) / cos +1 ) / Math.log(mul));
 }	
 
 function updateVar() {
-    document.getElementById("currency").innerHTM	L = Math.round(currency).toPrecision(3);
+    document.getElementById("currency").innerHTML = Math.round(currency).toPrecision(3);
     document.getElementById("currencyMakers").innerHTML = currencyMakers;
     document.getElementById("currencyMakerCost").innerHTML = currencyMakerCost.toPrecision(3);
     document.getElementById("prestigePoints").innerHTML = prestigePoints.toPrecision(3);
@@ -152,7 +152,7 @@ function upgradeCurrency() {
 }
 
 function lose(num, cos, mul) {
-    return cos * ((1 - mul * num) / (1 - mul));
+    return cos * ((1 - Math.pow(mul,num)) / (1 - mul));
 }
 
 function upgradeUpgrade() {
