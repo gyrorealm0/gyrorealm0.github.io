@@ -77,11 +77,10 @@ function maxAll() {
 }
 
 function buyCurrencyMaker() {
-    currencyMakerCost = Math.pow(1.1, currencyMakers);
     temp = purchase(currency, currencyMakerCost, 1.1);
-    currencyMakers += temp;
     if(temp > 0){
-        currency -= Math.pow(1.1, temp - 1) * currencyMakerCost;
+    currencyMakers += temp;
+    currency -= lose(temp, currencyMakerCost, 1.1);
     }
 }
 
@@ -89,13 +88,11 @@ function updateGame() {
     updateVar()
     makeCurrency()
     prestigeCheck()
-    priceCheck()
-    if(time%100 == 0){
+    priceCheck();
     save();
-    }
     time++;
     if(currency < 1){
-        currency = 1;
+        currency =	 1;
     }
 }
 
@@ -142,7 +139,7 @@ function upgradePrestige() {
     temp = purchase(currency, prestigeUpgradeCost, 1.1);
     if(temp > 0){
         prestigeUpgrades += temp;
-        currency -= Math.pow(1.1, temp - 1) * prestigeUpgradeCost;
+        currency -= lose(temp, prestigeUpgradeCost, 1.1);
     }
 }
 
@@ -150,8 +147,12 @@ function upgradeCurrency() {
     temp = purchase(prestigePoints, currencyUpgradeCost, 1.1);
     if(temp > 0){
         currencyUpgrades += temp;
-        prestigePoints -= Math.pow(1.1, temp - 1) * currencyUpgradeCost;
+        prestigePoints -= lose(temp, currencyUpgradeCost, 1.1);
     }
+}
+
+function lose(num, cos, mul) {
+    return cos * ((1 - mul * num) / (1 - mul));
 }
 
 function upgradeUpgrade() {

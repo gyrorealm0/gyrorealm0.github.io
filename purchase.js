@@ -16,7 +16,7 @@ function purchase(currency, cost, multiplier, max) {
     }
 
     if(max == true) {
-        return Math.floor(Math.log(currency * (multiplier - 1) / cost + 1) / Math.log(multiplier));
+        return Math.floor(Math.log(cur / cos) / Math.log(mul));
     }
 
     return 1;
