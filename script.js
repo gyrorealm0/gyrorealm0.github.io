@@ -18,11 +18,13 @@ var playerData = [
     currencyUpgrades = 0,
     prestigeUpgrades = 0,
     test = "",
-    saveArray = [0, 0, 0, 0, 0, 1, 0, 1, 0],
+    saveArray = [0, 0, 0, 0, 0, 1, 0, 1, 0, 0],
     tab = "currencyMaker",
     bruh = true,
     superPrestigePoints = 0,
-    possibleSuperPrestigePoints = 0
+    possibleSuperPrestigePoints = 0,
+    incrementalPoints = 0,
+    possibleIncrementalPoints = 0
 ]
 
 function fixVar() {
@@ -55,6 +57,8 @@ function updateVar() {
     document.getElementById("currencyUpgrades").innerHTML = currencyUpgrades;
     document.getElementById("prestigeUpgrades").innerHTML = prestigeUpgrades;
     document.getElementById("upgradeUpgrades").innerHTML = upgradeUpgrades;
+    document.getElementById("incrementalPoints").innerHTML = incrementalPoints.toPrecision(3);
+    document.getElementById("possibleIncrementalPoints").innerHTML = possibleIncrementalPoints.toPrecision(3);
 }
 
 function switchTabs(newtab) {
@@ -64,7 +68,7 @@ function switchTabs(newtab) {
 }
 
 function save() {
-    saveArray = [prestigePoints, time, currencyUpgrades, prestigeUpgrades, upgradeUpgrades, currency, currencyMakers, startCurrency, superPrestigePoints];
+    saveArray = [prestigePoints, time, currencyUpgrades, prestigeUpgrades, upgradeUpgrades, currency, currencyMakers, startCurrency, superPrestigePoints, incrementalPoints];
     localStorage.setItem("save", JSON.stringify(saveArray));
 }
 
@@ -113,10 +117,12 @@ function priceCheck() {
 function prestigeCheck() {
     possiblePrestigePoints = (Math.sqrt(currency * currencyMakers)) * (prestigeMultiplier) * (upgradeMultiplier);
     possibleSuperPrestigePoints = Math.log10(1 + prestigePoints / (1 + superPrestigePoints));
+    possibleIncrementalPoints = Math.log10((1 + superPrestigePoints) / (1 + incrementalPoints));
+    if(possibleIncrementalPoints < 0) possibleIncrementalPoints = 0;
 }
 
 function makeCurrency() {
-    currency += currencyMultiplier * currencyMakers * prestigePoints * (1 + superPrestigePoints * superPrestigePoints);
+    currency += Math.pow(currencyMultiplier * currencyMakers * prestigePoints * (1 + superPrestigePoints * superPrestigePoints), Math.sqrt(1 + incrementalPoints));
 }
 
 function prestige() {
@@ -135,6 +141,12 @@ function superPrestige() {
     currencyUpgrades = 0;
 }
 
+function increment() {
+    incrementalPoints += possibleIncrementalPoints;
+    superPrestige();
+    superPrestigePoints = 0;
+}
+
 function load() {
     saveArray = JSON.parse(localStorage.getItem("save"));
     prestigePoints = saveArray[0];
@@ -146,6 +158,7 @@ function load() {
     currencyMakers = saveArray[6];
     startCurrencyUpgrades = saveArray[7];
     superPrestigePoints = saveArray[8];
+    incrementalPoints = saveArray[9];
 }
 
 function upgradePrestige() {
@@ -197,6 +210,7 @@ function reset() {
     startCurrencyUpgradeCost = 2000;
     startCurrencyUpgrades = 0;
     superPrestigePoints = 0;
+    incrementalPoints = 0;
 }
 
 if(localStorage.getItem("save") === null) {

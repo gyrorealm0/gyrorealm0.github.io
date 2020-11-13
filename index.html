@@ -23,6 +23,8 @@
 <button class="tab" font-size: 30px; onclick="switchTabs('currencyMaker')">Currency Makers</button>
 <button class="tab" font-size: 30px; onclick="switchTabs('prestige')">Prestige</button>
 <button class="tab" font-size: 30px; onclick="switchTabs('superPrestige')">Super Prestige</button>
+<button class="tab" font-size: 30px; onclick="switchTabs('increment')">Increment</button>
+
 
 
 
@@ -56,7 +58,12 @@
 
 <div id="superPrestige" style="display: none;">
     <h3>Super Prestige Points: <span id="superPrestigePoints"></span></h3> 
-    <button class="button prestige" onclick="superPrestige()">Super Prestige: <span id="possibleSuperPrestigePoints"></span></button><br>
+    <button class="button superPrestige" onclick="superPrestige()">Super Prestige: <span id="possibleSuperPrestigePoints"></span></button><br>
+    </div>
+
+<div id="increment" style="display: none;">
+    <h3>Incremental Points: <span id="incrementalPoints"></span></h3> 
+    <button class="button increment" onclick="increment()">Increment: <span id="possibleIncrementalPoints"></span></button><br>
     </div>
 
 <br>
@@ -67,6 +74,6 @@
 <br>
 <br><button class=reset" onclick="reset()">reset</button>
 <br>
-Version 1.5.1.2
+Version 1.6 : Increment Update!
 </body>
 </html> 
