@@ -33,7 +33,10 @@ function purchase(cur, cos, mul) {
     if(cur < cos){
         return 0;
     }
-    return Math.floor(Math.log10(cur*(mul-1)/cos + 1) / Math.log10(mul));
+    if(cur < cos * mul + cos){
+        return 1;
+    }
+    return Math.floor(Math.log(cur / cos) / Math.log(mul));
 }
 
 function updateVar() {
@@ -71,9 +74,6 @@ function maxAll() {
     upgradePrestige();
     updateVar();
     upgradeUpgrade();
-    if(possiblePrestigePoints > prestigePoints){
-        prestige();
-    }
 }
 
 function buyCurrencyMaker() {
