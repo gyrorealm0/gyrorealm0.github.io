@@ -22,6 +22,7 @@
 <button class="tab" font-size: 30px; onclick="switchTabs('upgrades')">Upgrades</button>
 <button class="tab" font-size: 30px; onclick="switchTabs('currencyMaker')">Currency Makers</button>
 <button class="tab" font-size: 30px; onclick="switchTabs('prestige')">Prestige</button>
+<button class="tab" font-size: 30px; onclick="switchTabs('superPrestige')">Super Prestige</button>
 
 
 
@@ -52,6 +53,12 @@
 <h3>Prestige: <span id="prestigePoints"></span></h3> 
 <button class="button prestige" onclick="prestige()">Prestige: <span id="possiblePrestigePoints"></span></button><br>
 </div>
+
+<div id="superPrestige" style="display: none;">
+    <h3>Super Prestige Points: <span id="superPrestigePoints"></span></h3> 
+    <button class="button prestige" onclick="superPrestige()">Super Prestige: <span id="possibleSuperPrestigePoints"></span></button><br>
+    </div>
+
 <br>
 <img src="picture.png">
 <br><br>
@@ -60,6 +67,6 @@
 <br>
 <br><button class=reset" onclick="reset()">reset</button>
 <br>
-Version 1.4.6.4
+Version 1.5
 </body>
 </html> 
