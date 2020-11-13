@@ -19,7 +19,8 @@ var playerData = [
     prestigeUpgrades = 0,
     test = "",
     saveArray = [0, 0, 0, 0, 0, 1, 0, 1],
-    tab = "currencyMaker"	
+    tab = "currencyMaker",
+    bruh = true
 ]
 
 function fixVar() {
