@@ -44,7 +44,7 @@ function updateVar() {
     document.getElementById("currencyMakers").innerHTML = currencyMakers;
     document.getElementById("currencyMakerCost").innerHTML = currencyMakerCost.toPrecision(3);
     document.getElementById("prestigePoints").innerHTML = prestigePoints.toPrecision(3);
-    document.getElementById("superPrestigePoints").innerHTML = prestigePoints.toPrecision(3);
+    document.getElementById("superPrestigePoints").innerHTML = superPrestigePoints.toPrecision(3);
     document.getElementById("possiblePrestigePoints").innerHTML = possiblePrestigePoints.toPrecision(3);
     document.getElementById("possibleSuperPrestigePoints").innerHTML = possibleSuperPrestigePoints.toPrecision(3);
     document.getElementById("currencyUpgradeCost").innerHTML = currencyUpgradeCost.toPrecision(3);
