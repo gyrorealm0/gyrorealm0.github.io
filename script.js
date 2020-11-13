@@ -49,7 +49,7 @@ function updateVar() {
     document.getElementById("prestigeUpgradeCost").innerHTML = prestigeUpgradeCost.toPrecision(3);
     document.getElementById("upgradeUpgradeCost").innerHTML = upgradeUpgradeCost.toPrecision(3);
     document.getElementById("startCurrencyUpgradeCost").innerHTML = startCurrencyUpgradeCost.toPrecision(3);
-    document.getElementById("time").innerHTML= time;
+    document.getElementById("time").innerHTML= Math.floor(time / 250);
     document.getElementById("currencyUpgrades").innerHTML = currencyUpgrades;
     document.getElementById("prestigeUpgrades").innerHTML = prestigeUpgrades;
     document.getElementById("upgradeUpgrades").innerHTML = upgradeUpgrades;
