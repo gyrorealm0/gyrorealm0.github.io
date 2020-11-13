@@ -20,7 +20,7 @@ var playerData = [
     test = "",
     saveArray = [0, 0, 0, 0, 0, 1, 0, 1],
     tab = "currencyMaker",
-    bruh = false
+    bruh = true
 ]
 
 function fixVar() {
