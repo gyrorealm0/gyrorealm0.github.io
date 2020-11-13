@@ -37,10 +37,10 @@ function purchase(cur, cos, mul) {
         return 1;
     }
     return Math.floor(Math.log(cur / cos) / Math.log(mul));
-}
+}	
 
 function updateVar() {
-    document.getElementById("currency").innerHTML = Math.round(currency).toPrecision(3);
+    document.getElementById("currency").innerHTM	L = Math.round(currency).toPrecision(3);
     document.getElementById("currencyMakers").innerHTML = currencyMakers;
     document.getElementById("currencyMakerCost").innerHTML = currencyMakerCost.toPrecision(3);
     document.getElementById("prestigePoints").innerHTML = prestigePoints.toPrecision(3);
@@ -67,7 +67,7 @@ function save() {
 }
 
 function maxAll() {
-    buyCurrencyMaker();
+    buyCurrencyMaker();	
     updateGame();
     upgradeCurrency();
     updateGame();
@@ -119,7 +119,7 @@ function makeCurrency() {
 function prestige() {
     prestigePoints += possiblePrestigePoints;
     currencyMakers = 0;
-    currency = 0 + startCurrency;
+    currency = startCurrency;
     currencyMakerCost = 10;
 }
 
@@ -142,7 +142,7 @@ function upgradePrestige() {
         currency -= lose(temp, prestigeUpgradeCost, 1.1);
     }
 }
-
+	
 function upgradeCurrency() {
     temp = purchase(prestigePoints, currencyUpgradeCost, 1.1);
     if(temp > 0){
