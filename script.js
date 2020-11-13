@@ -48,7 +48,7 @@ function updateVar() {
     document.getElementById("currencyUpgradeCost").innerHTML = currencyUpgradeCost.toPrecision(3);
     document.getElementById("prestigeUpgradeCost").innerHTML = prestigeUpgradeCost.toPrecision(3);
     document.getElementById("upgradeUpgradeCost").innerHTML = upgradeUpgradeCost.toPrecision(3);
-    document.getElementById("startCurrencyUpgradeCost").innerHTML = startCurrencyUpgradeCost.toPrecision(3);
+    document.getElementById("startCurrencyUpgradeCost").innerHTML = Math.floor(startCurrencyUpgradeCost / 250);
     document.getElementById("time").innerHTML= Math.floor(time / 250);
     document.getElementById("currencyUpgrades").innerHTML = currencyUpgrades;
     document.getElementById("prestigeUpgrades").innerHTML = prestigeUpgrades;
@@ -104,7 +104,7 @@ function priceCheck() {
     currencyUpgradeCost = Math.ceil(Math.pow(1.1, currencyUpgrades));
     currencyMultiplier = 1 + Math.pow(currencyUpgrades, 1.1);
     currencyMakerCost = Math.pow(1.1, currencyMakers);
-    startCurrencyUpgradeCost = 1 + Math.pow(startCurrencyUpgrades, 5) * 2000;
+    startCurrencyUpgradeCost = 1 + Math.pow(5, startCurrencyUpgrades) * 2000;
     startCurrency = Math.pow(startCurrencyUpgrades, 10);
 }	
 
@@ -175,12 +175,14 @@ function upgradeStartCurrency() {
 
 function reset() {
     prestigePoints = 0;
-    time = 0;
+    time = 1;
     currencyUpgrades = 0;
     prestigeUpgrades = 0;
     upgradeUpgrades = 0;
     currency = 0;
     currencyMakers = 0;
+    startCurrencyUpgradeCost = 2000;
+    startCurrencyUpgrades = 0;
 }
 
 if(localStorage.getItem("save") === null) {
