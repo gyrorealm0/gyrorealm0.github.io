@@ -151,8 +151,8 @@ function load() {
     upgradeUpgrades = saveArray[4];
     currency = saveArray[5];
     currencyMakers = saveArray[6];
-    superPrestigePoints = saveArray[8];
-    incrementalPoints = saveArray[9];
+    superPrestigePoints = saveArray[7];
+    incrementalPoints = saveArray[8];
 }
 
 function upgradePrestige() {
