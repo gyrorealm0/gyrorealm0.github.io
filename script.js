@@ -64,7 +64,7 @@ function switchTabs(newtab) {
 }
 
 function save() {
-    saveArray = [prestigePoints, time, currencyUpgrades, prestigeUpgrades, upgradeUpgrades, currency, currencyMakers, startCurrency];
+    saveArray = [prestigePoints, time, currencyUpgrades, prestigeUpgrades, upgradeUpgrades, currency, currencyMakers, startCurrency, superPrestigePoints];
     localStorage.setItem("save", JSON.stringify(saveArray));
 }
 
@@ -87,9 +87,9 @@ function buyCurrencyMaker() {
 }
 
 function updateGame() {
-    updateVar()
-    makeCurrency()
-    prestigeCheck()
+    updateVar();
+    makeCurrency();
+    prestigeCheck();
     priceCheck();
     save();
     time++;
@@ -203,7 +203,7 @@ if(localStorage.getItem("save") === null) {
     localStorage.setItem("save", JSON.stringify(saveArray));
 }
 
-fixVar();
+
 load();
 
 setInterval(updateGame, (1))
