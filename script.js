@@ -68,11 +68,11 @@ function save() {
 
 function maxAll() {
     buyCurrencyMaker();
-    updateVar();
+    updateGame();
     upgradeCurrency();
-    updateVar();
+    updateGame();
     upgradePrestige();
-    updateVar();
+    updateGame();
     upgradeUpgrade();
 }
 
@@ -109,7 +109,7 @@ function priceCheck() {
 }	
 
 function prestigeCheck() {
-    possiblePrestigePoints = (Math.sqrt(currency + currencyMakers)) * (prestigeMultiplier) * (upgradeMultiplier);
+    possiblePrestigePoints = Math.abs((Math.sqrt(Math.abs(currency + currencyMakers))) * (prestigeMultiplier) * (upgradeMultiplier));
 }
 
 function makeCurrency() {
