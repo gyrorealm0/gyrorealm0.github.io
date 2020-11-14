@@ -126,7 +126,7 @@ function prestigeCheck() {
 }
 
 function makeCurrency() {
-    currency += Math.sqrt(Math.pow(0.001 + currencyMultiplier * currencyMakers * prestigePoints * (1 + superPrestigePoints * superPrestigePoints), Math.sqrt(1 + incrementalPoints)));
+    currency += Math.sqrt(Math.pow(0.001 + currencyMultiplier * currencyMakers * prestigePoints * (1 + superPrestigePoints * superPrestigePoints), Math.cbrt(1 + incrementalPoints)));
 }
 
 function prestige() {
