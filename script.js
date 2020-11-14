@@ -123,7 +123,7 @@ function makeCurrency() {
 function prestige() {
     prestigePoints += possiblePrestigePoints;
     currencyMakers = 0;
-    currency = startCurrency;
+    currency = 0;
     currencyMakerCost = 10;
 }
 
@@ -133,6 +133,9 @@ function superPrestige() {
     upgradeUpgrades = 0;
     prestigeUpgrades = 0;
     currencyUpgrades = 0;
+    currencyMakers = 0;
+    currency = 0;
+    currencyMakerCost = 10;
 }
 
 function increment() {
@@ -143,6 +146,9 @@ function increment() {
     currencyUpgrades = 0;
     superPrestigePoints = 0;
     possibleSuperPrestigePoints = 0;
+    currencyMakers = 0;
+    currency = 0;
+    currencyMakerCost = 10;
 }
 
 function load() {
