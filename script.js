@@ -129,7 +129,6 @@ function prestige() {
 
 function superPrestige() {
     superPrestigePoints += possibleSuperPrestigePoints;
-    prestige();
     prestigePoints = 0;
     upgradeUpgrades = 0;
     prestigeUpgrades = 0;
@@ -138,8 +137,12 @@ function superPrestige() {
 
 function increment() {
     incrementalPoints += possibleIncrementalPoints;
-    superPrestige();
+    prestigePoints = 0;
+    upgradeUpgrades = 0;
+    prestigeUpgrades = 0;
+    currencyUpgrades = 0;
     superPrestigePoints = 0;
+    possibleSuperPrestigePoints = 0;
 }
 
 function load() {
