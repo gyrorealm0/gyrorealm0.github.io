@@ -14,8 +14,9 @@
 
 <h4>Time Wasted: <span style="color:#69f420;" id="time"></span></h4>
 
-
-<button class ="button currency" onclick="maxAll()">Max All</button>
+<div id="maxAll" style="display: inline;">
+    <button class="button max" onclick="maxAll()"style="padding: 5px">Max All</button>
+</div>
       
 
 <br>
@@ -47,6 +48,10 @@
 <h4>Upgrade Upgrades: <span style="color:#f42069;" id="upgradeUpgrades"></span>
 <button class="button upgradeUpgrades" onclick="upgradeUpgrade()">Upgrade Upgrades: <span id="upgradeUpgradeCost"></span> of each other upgrades</button>
 </h4>
+<div id="maxCheck" style="display: inline"> 
+    <button class="button maxAll" style="display: inline;" onclick="maxAllCheck()">Purchase Max All: 10 Incremental Points</button>
+</div>
+
 </div>
 
 <div id="prestige" style="display: none;">

@@ -21,7 +21,8 @@ var playerData = [
     superPrestigePoints = 0,
     possibleSuperPrestigePoints = 0,
     incrementalPoints = 0,
-    possibleIncrementalPoints = 0
+    possibleIncrementalPoints = 0,
+    canMaxAll = false
 ]
 
 function fixVar() {
@@ -37,6 +38,14 @@ function purchase(cur, cos, mul) {
     }
     return Math.floor(Math.log(cur * (mul - 1) / cos +1 ) / Math.log(mul));
 }	
+
+function maxAllCheck() {
+    if(incrementalPoints >= 10){
+        document.getElementById("maxAll").style.display = "inline";
+        document.getElementById("maxCheck").style.display = "none";
+        canMaxAll = true;
+    }
+}
 
 function updateVar() {
     document.getElementById("currency").innerHTML = Math.round(currency).toPrecision(3);
@@ -64,7 +73,7 @@ function switchTabs(newtab) {
 }
 
 function save() {
-    saveArray = [prestigePoints, time, currencyUpgrades, prestigeUpgrades, upgradeUpgrades, currency, currencyMakers, superPrestigePoints, incrementalPoints];
+    saveArray = [prestigePoints, time, currencyUpgrades, prestigeUpgrades, upgradeUpgrades, currency, currencyMakers, superPrestigePoints, incrementalPoints], canMaxAll;
     localStorage.setItem("save", JSON.stringify(saveArray));
 }
 
@@ -162,6 +171,7 @@ function load() {
     currencyMakers = saveArray[6];
     superPrestigePoints = saveArray[7];
     incrementalPoints = saveArray[8];
+    canMaxAll = saveArray[9];
 }
 
 function upgradePrestige() {
@@ -184,7 +194,7 @@ function lose(num, cos, mul) {
     return cos * ((1 - Math.pow(mul,num)) / (1 - mul));
 }
 
-function upgradeUpgrade() {
+function upgradeUpgrade() { 
     temp = currencyUpgrades - upgradeUpgradeCost;
     temp2 = prestigeUpgrades - upgradeUpgradeCost;
     if(temp >= 0){
@@ -206,6 +216,7 @@ function reset() {
     currencyMakers = 0;
     superPrestigePoints = 0;
     incrementalPoints = 0;
+    canMaxAll = false;
 }
 
 if(localStorage.getItem("save") === null) {
@@ -214,5 +225,10 @@ if(localStorage.getItem("save") === null) {
 
 
 load();
+
+if(!canMaxAll){
+    document.getElementById("maxAll").style.display = "none";
+    document.getElementById("maxCheck").style.display = "maxCheck";
+}
 
 setInterval(updateGame, (1))
