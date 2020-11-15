@@ -226,9 +226,6 @@ if(localStorage.getItem("save") === null) {
 
 load();
 
-if(incrementalPoints >= 10){
-    document.getElementById("maxAll").style.display = "inline";
-    document.getElementById("maxCheck").style.display = "none";
-}
+maxAllCheck();
 
 setInterval(updateGame, (1))
