@@ -1,93 +1,28 @@
 <html lang="en">
 
-<head>
+    <head>
+        <link rel="icon" href="picture.png">
+        <title>Currency Maker</title>
+        <link rel="stylesheet" href="style.css">
 
-    <title>Currency Maker</title>
+        <h1>Currency: <span style="color:#2069f4;" id="currency"></span></h1>
 
+        <button class="tab" onclick="bruh()">Click</button>
+        
+        <br><br>
 
+        <a href="https://discord.com/invite/wzz6rVT2jz">Join the discord!</a>
 
-    <link rel="stylesheet" href="style.css">
+        <br><br>
 
-    <h1>Currency: <span style="color:#2069f4;" id="currency"></span></h1>
+        <button onclick="reset()">reset</button>
 
+        <br>
 
+        Version <span style="color:#a81ddb;">1.6.3.3 </span> - Increment Update!
 
+        <script src="script.js"></script>
 
-    <h4>Time Wasted: <span style="color:#69f420;" id="time"></span></h4>
-
-    <div id="maxAll" style="display: none;">
-        <button class="button max" onclick="maxAll()" style="padding: 5px">Max All</button>
-    </div>
-
-
-    <br>
-    <button class="tab" font-size: 30px; onclick="switchTabs('upgrades')">Upgrades</button>
-    <button class="tab" font-size: 30px; onclick="switchTabs('currencyMaker')">Currency Makers</button>
-    <button class="tab" font-size: 30px; onclick="switchTabs('prestige')">Prestige</button>
-    <button class="tab" font-size: 30px; onclick="switchTabs('superPrestige')">Super Prestige</button>
-    <button class="tab" font-size: 30px; onclick="switchTabs('increment')">Increment</button>
-
-
-
-
-    <div id="currencyMaker" style="display: none;">
-        <h3>Currency Makers: <span style="color:#f42069;" id="currencyMakers"></span></h3>
-        <button class="button currencyMaker" onclick="buyCurrencyMaker()">Currency Maker Cost: <span
-                id="currencyMakerCost"></span></button>
-
-    </div>
-
-    <div id="upgrades" style="display: none;">
-        <h4>Currency Upgrades: <span style="color:#f42069;" id="currencyUpgrades"></span>
-            <button class="button currencyUpgrade" onclick="upgradeCurrency()">Upgrade Currency: <span
-                    id="currencyUpgradeCost"></span> prestige</button>
-        </h4>
-
-        <h4>Prestige Upgrades: <span style="color:#f42069;" id="prestigeUpgrades"></span>
-            <button class="button prestigeUpgrade" onclick="upgradePrestige()">Upgrade Prestige: <span
-                    id="prestigeUpgradeCost"></span> currency</button>
-        </h4>
-
-
-        <h4>Upgrade Upgrades: <span style="color:#f42069;" id="upgradeUpgrades"></span>
-            <button class="button upgradeUpgrades" onclick="upgradeUpgrade()">Upgrade Upgrades: <span
-                    id="upgradeUpgradeCost"></span> of each other upgrades</button>
-        </h4>
-        <div id="maxCheck" style="display: inline">
-            <button class="button maxAll" style="display: inline;" onclick="maxAllCheck()">Purchase Max All: 10
-                Incremental Points</button>
-        </div>
-
-    </div>
-
-    <div id="prestige" style="display: none;">
-        <h3>Prestige: <span style="color:#f42069;" id="prestigePoints"></span></h3>
-        <button class="button prestige" onclick="prestige()">Prestige: <span
-                id="possiblePrestigePoints"></span></button><br>
-    </div>
-
-    <div id="superPrestige" style="display: none;">
-        <h3>Super Prestige Points: <span style="color:#f42069;" id="superPrestigePoints"></span></h3>
-        <button class="button superPrestige" onclick="superPrestige()">Super Prestige: <span
-                id="possibleSuperPrestigePoints"></span></button><br>
-    </div>
-
-    <div id="increment" style="display: none;">
-        <h3>Incremental Points: <span style="color:#f42069;" id="incrementalPoints"></span></h3>
-        <button class="button increment" onclick="increment()">Increment: <span
-                id="possibleIncrementalPoints"></span></button><br>
-    </div>
-
-    <br>
-    <img src="picture.png">
-    <br><br>
-    <a href="https://discord.com/invite/wzz6rVT2jz">Join the discord!</a>
-
-    <br>
-    <br><button class=reset" onclick="reset()">reset</button>
-    <br>
-    Version <span style="color:#a81ddb;">1.6.3.3 </span> - Increment Update!
-    <script src="script.js"></script>
-</head>
+    </head>
 
 </html>
