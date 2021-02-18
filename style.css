@@ -23,11 +23,6 @@ button {
   margin-bottom: 10px;
 }
 
-.button:hover {
-  background-color: #127A20;
-  color: white;
-}
-
 .tab {
   background: #455A64;
   font-weight: bold;
