@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Typewriter;
+  src: url("https://cdn.glitch.com/b0b4f18a-9c86-4c2e-8555-6f6d97666bc3%2FMonospaceTypewriter.ttf?v=1577653228767");
+}
+
 #drop_zone {
   border: 5px solid blue;
   width:  200px;
