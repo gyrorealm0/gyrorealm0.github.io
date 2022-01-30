@@ -90,6 +90,7 @@ function parse()
 
 function graph(){
 	log('graphing started');
+	document.getElementById("image").hidden = true;
 
 	log(data.length);
 
