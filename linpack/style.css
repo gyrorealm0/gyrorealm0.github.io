@@ -6,18 +6,26 @@ font-family: Typewriter;
 }
 
 html {
-	height: 100%;
+ 	top:0; left:0; bottom:0; right:0; height:100%; width:100% margin:0px;
 }
 
 body {
-  font-family: Typewriter;
-	font-size: 1em;
-  margin: .2em;
-  background: #1C1C1C;
-  color: white;
-  text-align: center;
-	width: 12.875em;
-	height: 41em;
+  	font-family: Typewriter;
+	font-size: 150%;
+  	background: #1C1C1C;
+  	color: white;
+  	text-align: center;
+	height:98.5%
+	margin:0px;
+}
+
+#input_container {
+	position:absolute;
+	top:0; left:0; bottom:0; right:0; height:100%; margin:8px;
+	width: 254px;
+	height: calc(100% - 16px);
+	display: flex;
+	flex-direction: column;
 }
 
 #button_label:hover {
@@ -31,76 +39,45 @@ body {
 	border-left: 2px solid #127A20;
   	height: 100%;
 	position: absolute;
-	left: 15.875em;
+	left: 270px;
 	top: 0px;
 	bottom: 0px;
 }
 
 #canvas {
-    position:fixed;
-    left:16em;
-    top:0;
-    width:100%;
-    height:100%;
+    	position:fixed;
+    	left:270px;
+    	top:0;
+    	width:100%;
+    	height:100%;
 }
 
 #button_label {
-  display: block;
-  padding: 0.375em 0.375em;
-  font-family: Typewriter;
-  transition-duration: 0.3s;
-  background: #455A64;
-  border: 0.125em solid #127A20;
-  border-radius: 0.25em;
-  color: black;
-  font-size: 1.2em;
-  margin-bottom: 0.2em;
+  	display: block;
+  	padding: 6px 6px;
+  	font-family: Typewriter;
+  	transition-duration: 0.3s;
+  	background: #455A64;
+  	border: 2px solid #127A20;
+  	border-radius: 4px;
+  	color: black;
+  	margin-bottom: 8px;
 
-  width: 11.875em;
-}
-
-#export_reset {
-  display: block;
-  bottom: 0px;
-  position: fixed;
-  padding: 0.375em 0.375em;
-  font-family: Typewriter;
-  transition-duration: 0.3s;
-  background: #455A64;
-  border: 2px solid #127A20;
-  border-radius: 4px;
-  color: black;
-  font-size: 1.2em;
-  margin-bottom: 0.2em;
-
-  width: 11.875em;
-}
-
-#input_container {
-	width: 12.875em;
 }
 
 #text_output {
-	display: block;
-	margin-top: -.1em;
- 	padding: .65em .65em;
-  	font-family: Typewriter;
-  	transition-duration: 0.3s;
-  	background: #1C1C1C;
-  	border: 2px solid #a81ddb;
-  	border-radius: 4px;
-  	color: white;
-  	font-size: 0.6em;
-	height: 65.25em;
-	width: 24em;
-	text-align: left;
+ 	display: flex;
+      	padding: 6px 6px;
+      	font-family: Typewriter;
+      	background: #1C1C1C;
+      	border: 2px solid #a81ddb;
+      	border-radius: 4px;
+      	color: white;
+      	font-size: 40%;
+    	text-align: left;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
 }
-
-#export_reset:hover {
-  
-	background-color: #1565C0;
-	color: white;
-}
-
 
 a { text-decoration: none; }
