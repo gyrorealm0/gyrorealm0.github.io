@@ -1,6 +1,15 @@
 var input = [];
 var data = [];
 
+var canvas = document.getElementById("canvas");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "#2d2d2d";
+ctx.fillRect(30, 50, 750, 175);
+
 async function dropHandler(ev) 
 {
 	log('File(s) dropped');
@@ -90,19 +99,29 @@ function parse()
 
 function dragOverHandler(ev) {ev.preventDefault();}
 function log(text) {console.log(text); document.getElementById("text_output").innerHTML = '~ ' + text + '<br>' + document.getElementById("text_output").innerHTML;}
-function export_image() {log('text exported'); log(input.length); log(JSON.stringify(input)); log(input.unshift());}
+
+function export_image() 
+{
+	var canvas = document.getElementById("canvas");
+	var img = new Image();
+	link = document.createElement('a')
+	uri = canvas.toDataURL();
+	link.href = uri
+        link.download = 'export.png'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+}
+
 function export_text() 
 {
 	var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(data));
-    element.setAttribute('download', "export");
-
-    element.style.display = 'none';
-    document.body.appendChild(element);
-
-    element.click();
-
-    document.body.removeChild(element);
+    	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(data));
+    	element.setAttribute('download', "export");
+    	element.style.display = 'none';
+    	document.body.appendChild(element);
+    	element.click();
+    	document.body.removeChild(element);
 
 	log('text exported');
 }
