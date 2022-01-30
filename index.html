@@ -1,28 +1,33 @@
-<html lang="en">
+<!DOCTYPE html>
+	<head>
+		<title>Linpack Analysis</title>
+  
+		<link rel="icon" type="image/png" href="">
+  
+		<link rel="stylesheet" href="style.css">
+  
+		
+	</head>
 
-    <head>
-        <link rel="icon" href="picture.png">
-        <title>Currency Maker</title>
-        <link rel="stylesheet" href="style.css">
 
-        <h1>Currency: <span style="color:#2069f4;" id="currency"></span></h1>
+	<canvas id="canvas"></canvas>
 
-        <button class="tab" onclick="bruh()">Click</button>
-        
-        <br><br>
+	<body>
+  
+		<div id="line">
+		</div>
 
-    
-
-        <br><br>
-
-        <button onclick="reset()">reset</button>
-
-        <br>
-
-        Version <span style="color:#a81ddb;">1.7 </span> - Unupdate!
-
-        <script src="script.js"></script>
-
-    </head>
+		<div id="input_container"> 
+			<a id="button_label" for="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">Drop Linpack export(s) here</a>
+			<a id="button_label" href="https://github.com/BoringBoredom/Linpack-Extended/archive/refs/heads/master.zip" class="button">Download Linpack</a>
+			<a id="button_label" onclick="export_image();">Export to png</a>
+			<a id="button_label" onclick="export_text();">Export text</a>
+			<a id="button_label" onclick="parse();">Parse Data</a>
+			<a id="button_label" onclick="graph();">Graph Data</a>
+			<a id="text_output" style="overflow:auto">~ Made by Gyrorealm<br></a>
+		</div>
+	</body>
+	<img id="image"src="C:\Users\Bruh\Desktop\file.png" hidden>
+	<script src="script.js"></script>
 
 </html>
