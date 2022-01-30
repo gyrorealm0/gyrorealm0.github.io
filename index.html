@@ -14,16 +14,13 @@
 
 	<body>
   
-		<div id="line">
-		</div>
-
-		<div id="input_container"> 
-			<a id="button_label" for="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">Drop Linpack export(s) here</a>
-			<a id="button_label" href="https://github.com/BoringBoredom/Linpack-Extended/archive/refs/heads/master.zip" class="button">Download Linpack</a>
-			<a id="button_label" onclick="export_image();">Export to png</a>
-			<a id="button_label" onclick="export_text();">Export text</a>
-			<a id="button_label" onclick="parse();">Parse Data</a>
-			<a id="button_label" onclick="graph();">Graph Data</a>
+				<div id="input_container"> 
+			<a id="drop_button" for="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">Drop Linpack export(s) here</a>
+			<a id="button_label" name="bored_button" href="https://github.com/BoringBoredom/Linpack-Extended/archive/refs/heads/master.zip" class="button">Download Linpack</a>
+			<a id="button_label" name="image_button" onclick="export_image();">Export to png</a>
+			<a name="text_button" id="button_label" onclick="export_text();">Export text</a>
+			<a id="button_label" name="parse_button" onclick="parse();">Parse Data</a>
+			<a id="button_label" name="graph_button" onclick="graph();">Graph Data</a>
 			<a id="text_output" style="overflow:auto">~ Made by Gyrorealm<br></a>
 		</div>
 	</body>
