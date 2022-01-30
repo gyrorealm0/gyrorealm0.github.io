@@ -91,4 +91,18 @@ function parse()
 function dragOverHandler(ev) {ev.preventDefault();}
 function log(text) {console.log(text); document.getElementById("text_output").innerHTML = '~ ' + text + '<br>' + document.getElementById("text_output").innerHTML;}
 function export_image() {log('text exported'); log(input.length); log(JSON.stringify(input)); log(input.unshift());}
-function export_text() {log('text exported');}
+function export_text() 
+{
+	var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(data));
+    element.setAttribute('download', "export");
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+
+	log('text exported');
+}
