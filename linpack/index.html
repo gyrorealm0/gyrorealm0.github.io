@@ -1,16 +1,38 @@
 <!DOCTYPE html>
+	<head>
+		<title>Linpack Analysis</title>
+  
+		<link rel="icon" type="image/png" href="https://github.com/gyrorealm0/gyrorealm0.github.io/blob/main/linpack/icon.png?raw=true">
+  
+		<link rel="stylesheet" href="style.css">
+  
+		<script src="script.js"></script>
 
-<head>
-  <title>Linpack Analysis</title>
-  <link rel="icon" type="image/png" href="https://github.com/gyrorealm0/gyrorealm0.github.io/blob/main/linpack/icon.png?raw=true">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
-</head>
+	</head>
 
-<body>
-  <div id="drop_zone" ondrop="dropHandler(event);">
-    <p>Drag one or more files to this Drop Zone ...</p>
-  </div>
-</body>
+
+
+	<canvas id=canvas></canvas>
+
+	<body>
+  
+	
+		<div id="line"></div>
+	
+		<div id="input_container"> 
+			<label id="button_label" for="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">Drop Linpack export(s) here</label>
+			<a id="button_label" href="https://github.com/BoringBoredom/Linpack-Extended/archive/refs/heads/master.zip" class="button">Download Linpack</a>
+			<a id="button_label" onclick="export_image();">Export to png</a>
+			<a id="button_label" onclick="export_text();">Export to text</a>
+		</div>
+
+		<div id="text_output" style="overflow:auto"></div>
+
+		
+
+			<a id="export_reset" onclick="refresh();">Clear everything</a>
+	</body>
+
+
 
 </html>
