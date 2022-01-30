@@ -100,7 +100,6 @@ function graph(){
 	var ctx = canvas.getContext("2d");
 	
 	var image = document.getElementById("image");
-	image.crossOrigin = 'anonymous';
 	ctx.drawImage(image, 0, 0);
 
 	log('graphing complete');
