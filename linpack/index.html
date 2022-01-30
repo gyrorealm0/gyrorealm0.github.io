@@ -6,9 +6,7 @@
   
 		<link rel="stylesheet" href="style.css">
   
-		<script src="script.js"></script>
-
-	</head>
+			</head>
 
 
 
@@ -20,19 +18,19 @@
 		<div id="line"></div>
 	
 		<div id="input_container"> 
-			<label id="button_label" for="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">Drop Linpack export(s) here</label>
+			<a id="button_label" for="drop_zone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">Drop Linpack export(s) here</a>
 			<a id="button_label" href="https://github.com/BoringBoredom/Linpack-Extended/archive/refs/heads/master.zip" class="button">Download Linpack</a>
 			<a id="button_label" onclick="export_image();">Export to png</a>
 			<a id="button_label" onclick="export_text();">Export to text</a>
+			<a id="button_label" onclick="refresh();">Clear everything</a>
+			<a id="text_output" style="overflow:auto">~ Made by Gyrorealm<br></a>
 		</div>
 
-		<div id="text_output" style="overflow:auto"></div>
-
-		
-
-			<a id="export_reset" onclick="refresh();">Clear everything</a>
+			
 	</body>
 
+
+<script src="script.js"></script>
 
 
 </html>
