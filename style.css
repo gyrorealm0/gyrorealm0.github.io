@@ -7,6 +7,20 @@ font-family: Typewriter;
 
 a { text-decoration: none; }
 
+#drop_button {
+	text-align: center;
+  	display: block;
+  	padding: 1% 1%;
+  	font-family: Typewriter;
+  	transition-duration: 0.3s;
+  	background: #455A64;
+  	border: .2vh solid #127A20;
+  	border-radius: .5vh;
+  	color: black;
+  	margin-bottom: 3%;
+	height: 7%;
+}
+
 html {
  	top:0; 
 	left:0; 
@@ -19,7 +33,7 @@ html {
 
 body {
   	font-family: Typewriter;
-	font-size: 150%;
+	font-size: 2.5vh;
   	background: #1C1C1C;
   	color: white;
   	text-align: center;
@@ -29,54 +43,63 @@ body {
 
 #input_container {
 	position:absolute;
-	top:0; left:0; bottom:0; right:0; height:100%; margin:8px;
-	width: 254px;
-	height: calc(100% - 16px);
+	top:0; left:0; bottom:0; right:0; height:100%; margin:0.375%;
+	width: 13.25%;
+	height: calc(100% - 1.25%);
 	display: flex;
 	flex-direction: column;
+	align-content: center;
+	text-align: center;
 }
 
 #canvas {
     	position:fixed;
-    	left:270px;
+    	left:14%;
     	top:0;
-    	width:calc(100% - 270);
+    	width:calc(100% - 14%);
     	height:100%;
 }
 
 #image {
 	position:fixed;
 	top: 0px;
-	left: 270px;
+	left: 14%;
+	height:100%;
 }
 
 #button_label {
+	text-align: center;
+	content-align: center;
   	display: block;
-  	padding: 6px 6px;
+  	padding: 2% 2%;
   	font-family: Typewriter;
   	transition-duration: 0.3s;
   	background: #455A64;
-  	border: 2px solid #127A20;
-  	border-radius: 4px;
+  	border: .2vh solid #127A20;
+  	border-radius: .5vh;
   	color: black;
-  	margin-bottom: 8px;
-
+  	margin-bottom: 3%;
+	height: 3%;
 }
 
 #button_label:hover {
-  
+	background-color: #1565C0;
+	color: white;
+}
+
+#drop_button:hover {
 	background-color: #1565C0;
 	color: white;
 }
 
 
 #text_output {
- 	display: flex;
-      	padding: 6px 6px;
+	display: block;
+      	padding: 1% 1%;
       	font-family: Typewriter;
       	background: #1C1C1C;
-      	border: 2px solid #a81ddb;
-      	border-radius: 4px;
+      	border: .2vh solid #a81ddb;
+      	border-radius: .5vh;
       	color: white;
       	font-size: 40%;
     	text-align: left;
@@ -85,11 +108,3 @@ body {
 	flex-direction: column;
 }
 
-#line {
-	border-left: 2px solid #127A20;
-  	height: 100%;
-	position: absolute;
-	left: 270px;
-	top: 0px;
-	bottom: 0px;
-}
