@@ -58,7 +58,7 @@ function parse()
 
 			if(temp[j].startsWith('Problem size:'))
 			{
-				size = temp[j].substring(13);
+				size = temp[j].substring(14);
 				if(split > 0){
 				data[count] = new Array();
 				data[count].push(sizea);
@@ -91,6 +91,8 @@ function parse()
 function graph(){
 	log('graphing started');
 
+	log(data.length);
+
 	canvas.width = window.innerWidth - 270;
 	canvas.height = window.innerHeight;
 	
@@ -101,6 +103,14 @@ function graph(){
 	
 	var image = document.getElementById("image");
 	ctx.drawImage(image, 0, 0);
+	ctx.fillStyle = 'green';
+
+	for(i = 0; i < data.length; i++)
+		{
+			ctx.fillText(data[i][0][0], w/2, h/2 + 10 * i);
+			log(data[i][0][0]);
+		}
+	
 
 	log('graphing complete');
 }
