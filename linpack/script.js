@@ -1,4 +1,4 @@
-var input = [""];
+var input = [];
 
 var data = [[],[],[],[],[]];
 
@@ -9,8 +9,7 @@ function checkfile(fileName) {
 
 function dropHandler(ev) 
 {
-	console.log('File(s) dropped');
-	document.getElementById("text_output").innerHTML = '~ File(s) dropped' + document.getElementById("text_output").innerHTML;
+	log('File(s) dropped');
 	ev.preventDefault();
 
 	
@@ -20,39 +19,23 @@ function dropHandler(ev)
 		if(fileName.endsWith('.txt') & fileName.startsWith('linpack_output'))
 		{
 			file.text().then(function(text){input.push(text);})
-			console.log('file [' + (input.unshift()) + '] ' + fileName + ' uploaded successfully');
-			document.getElementById("text_output").innerHTML = '~ file [' + (input.unshift()) + '] "' + fileName + '" uploaded successfully<br>' + document.getElementById("text_output").innerHTML;
-		} else {
-			console.warn('file [' + (input.unshift()) + '] ' + fileName + ' is %cNOT a linpack export', "color:red");
-			document.getElementById("text_output").innerHTML = '~ file [' + (input.unshift()) + '] "' + fileName + '" is NOT a linpack export<br>' + document.getElementById("text_output").innerHTML;
-		}	
+
+			log(JSON.stringify(input));
+			
+			log('file [' + (input.unshift()) + '] "' + fileName + '" uploaded successfully');
+		} else {	
+			log('file [' + (input.length) + '] "' + fileName + '" is NOT a linpack export');
+			}	
 		
     	}
 
-	console.log(input.unshift() + ' file(s) successfully uploaded');
-	document.getElementById("text_output").innerHTML = '~ ' + input.unshift() + ' file(s) successfully uploaded<br>' + document.getElementById("text_output").innerHTML;
+	log(input.length + ' file(s) successfully uploaded');
 }
 
 
 
-function dragOverHandler(ev) 
-{
-	ev.preventDefault();
-
-}
-
-function export_image()
-{
-	console.log('text exported');
-}
-
-function export_text()
-{
-	console.log('text exported');
-}
-
-function refresh()
-{
-	
-	window.location.reload()
-}
+function dragOverHandler(ev) {ev.preventDefault();}
+function refresh() {window.location.reload();}
+function log(text) {console.log(text); document.getElementById("text_output").innerHTML = '~ ' + text + '<br>' + document.getElementById("text_output").innerHTML;}
+function export_image() {log('text exported'); log(input.length); log(JSON.stringify(input)); log(input.unshift());}
+function export_text() {log('text exported');}
