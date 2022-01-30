@@ -1,1 +1,0 @@
-https://gyrorealm0.github.io/
