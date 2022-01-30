@@ -70,6 +70,7 @@ function parse()
 				maxa = [];
 				avga = [];
 				mina = [];
+				j += 7;
 			}
 			
 			
