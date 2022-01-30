@@ -9,16 +9,16 @@ async function dropHandler(ev)
 	
 	var count = 0;
 
-    	for (const file of ev.dataTransfer.files)
+    	for (const file of ev.dataTransfer.files)	
 	{
 		const fileName = file.name;
-		if(fileName.endsWith('.txt') & fileName.startsWith('linpack_output'))
+		if(fileName.endsWith('.txt'))
 		{
 			file.text().then(function(text){input.push(text);})
 			count++;
 			log('file [' + (count) + '] "' + fileName + '" uploaded successfully');
 		} else {
-			log('file [' + (count) + '] "' + fileName + '" is NOT a linpack export');
+			log('file [' + (count) + '] "' + fileName + '" is NOT a text file');
 			}
     	}
 	log(count + ' file(s) successfully uploaded');
