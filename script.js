@@ -125,18 +125,18 @@ function graph(){
 	ctx.fillText("File", 32, 50);
 	ctx.fillText("Problem Size", 146, 50);
 	ctx.fillText("Time to Run", 362, 50);
-	ctx.fillText("Range", 582, 50);
-	ctx.fillText("Variation", 728, 50);
-	ctx.fillText("Loss", 932, 50);
-	ctx.fillText("Score", 1142, 50);
+	ctx.fillText("Range", 592, 50);
+	ctx.fillText("Variation", 738, 50);
+	ctx.fillText("Loss", 942, 50);
+	ctx.fillText("Score", 1146, 50);
 
 	ctx.fillText("File", 32, b);
 	ctx.fillText("Problem Size", 146, b);
 	ctx.fillText("Time to Run", 362, b);
-	ctx.fillText("Range", 582, b);
-	ctx.fillText("Variation", 728, b);
-	ctx.fillText("Loss", 932, b);
-	ctx.fillText("Score", 1142, b);
+	ctx.fillText("Range", 592, b);
+	ctx.fillText("Variation", 738, b);
+	ctx.fillText("Loss", 942, b);
+	ctx.fillText("Score", 1146, b);
 	
 	
 	
@@ -145,7 +145,7 @@ function graph(){
 		
 	ctx.font = '2vh Typewriter'
 
-	for(i = 0; i < 22; i++)
+	for(i = 0; i < results.length & i < 22; i++)
 	{
 		for(j = 0; j < 7; j++)
 		{
@@ -172,8 +172,10 @@ function analyze(i)
 		var score = 0;
 		var temp = 0;
 		var tempa = [];
+		var length = data[i][0].unshift();
+
 		var time = data[i][4][0].substring(0, data[i][4][0].indexOf(" "));
-		for(j = 0; j < data[i][0].unshift(); j++)
+		for(j = 0; j < length; j++)
 		{
 			if(data[i][1][j] < mini){ mini = data[i][1][j]; } 
 			if(data[i][3][j] > maxi){ maxi = data[i][3][j]; } 
@@ -184,17 +186,17 @@ function analyze(i)
 		range = maxi - mini;
 
 		variation = 100 * (range / avg) * range;
-		loss = data[i][2][0] - data[i][2][data[i].length];
-		score = (((time) / (variation)) - ((time) * (loss)));
+		loss = data[i][2][0] - data[i][2][length - 1];
+		score = 0.1 * (((time) / (variation)) - ((time) * (loss)));
 		
 				
 
 		tempa.push(i + 1);
 		tempa.push(data[i][0][0]);
 		tempa.push(data[i][4][0]);
-		tempa.push(parseFloat(range).toFixed(2) + " Gflops");
-		tempa.push(parseFloat(variation).toFixed(2) + " Gflops");
-		tempa.push(parseFloat(loss).toFixed(2) + " Gflops");
+		tempa.push(parseFloat(range).toFixed(4) + " Gflops");
+		tempa.push(parseFloat(variation).toFixed(4) + " Gflops");
+		tempa.push(parseFloat(loss).toFixed(4) + " Gflops");
 		tempa.push(parseFloat(score).toFixed(2) + " Stability");
 		results.push(tempa);
 
