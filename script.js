@@ -185,8 +185,8 @@ function analyze(i)
 		avg = temp / data[i].length;
 		range = maxi - mini;
 
-		variation = 100 * (range / avg) * range;
-		loss = data[i][2][0] - data[i][2][length - 1];
+		variation = 100 * (range / avg);
+		loss = 100 * (data[i][2][0] - data[i][2][length - 1]) / avg;
 		score = 0.1 * (((time) / (variation)) - ((time) * (loss)));
 		
 				
@@ -194,9 +194,9 @@ function analyze(i)
 		tempa.push(i + 1);
 		tempa.push(data[i][0][0]);
 		tempa.push(data[i][4][0]);
-		tempa.push(parseFloat(100 * ((maxi / mini) - 1)).toFixed(4) + " %");
-		tempa.push(parseFloat(variation).toFixed(4) + " Gflops");
-		tempa.push(parseFloat(loss).toFixed(4) + " Gflops");
+		tempa.push(parseFloat((100 * ((maxi / mini) - 1)).toFixed(4)) + " %");
+		tempa.push(parseFloat(variation).toFixed(4)  + " %");
+		tempa.push(parseFloat(loss).toFixed(4) + " %");
 		tempa.push(parseFloat(score).toFixed(2) + " Stability");
 		results.push(tempa);
 
