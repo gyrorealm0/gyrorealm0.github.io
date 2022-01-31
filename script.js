@@ -125,7 +125,7 @@ function graph(){
 	ctx.fillText("File", 32, 50);
 	ctx.fillText("Problem Size", 146, 50);
 	ctx.fillText("Time to Run", 362, 50);
-	ctx.fillText("Range", 592, 50);
+	ctx.fillText("Variation", 562, 50);
 	ctx.fillText("Deviation", 738, 50);
 	ctx.fillText("Loss", 942, 50);
 	ctx.fillText("Score", 1146, 50);
@@ -133,7 +133,7 @@ function graph(){
 	ctx.fillText("File", 32, b);
 	ctx.fillText("Problem Size", 146, b);
 	ctx.fillText("Time to Run", 362, b);
-	ctx.fillText("Range", 592, b);
+	ctx.fillText("Variation", 562, b);
 	ctx.fillText("Deviation", 738, b);
 	ctx.fillText("Loss", 942, b);
 	ctx.fillText("Score", 1146, b);
