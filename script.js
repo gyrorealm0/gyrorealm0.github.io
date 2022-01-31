@@ -183,9 +183,9 @@ function analyze(i)
 		avg = temp / data[i].length;
 		range = maxi - mini;
 
-		variation = 100 * (range / avg);
+		variation = 100 * (range / avg) * range;
 		loss = data[i][2][0] - data[i][2][data[i].length];
-		score = 0.1 * (((time) / (variation)) - ((time) * (loss)));
+		score = (((time) / (variation)) - ((time) * (loss)));
 		
 				
 
