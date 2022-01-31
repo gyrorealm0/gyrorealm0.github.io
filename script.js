@@ -194,7 +194,7 @@ function analyze(i)
 		tempa.push(i + 1);
 		tempa.push(data[i][0][0]);
 		tempa.push(data[i][4][0]);
-		tempa.push(parseFloat(range).toFixed(4) + " Gflops");
+		tempa.push(parseFloat(100 * ((maxi / mini) - 1)).toFixed(4) + " %");
 		tempa.push(parseFloat(variation).toFixed(4) + " Gflops");
 		tempa.push(parseFloat(loss).toFixed(4) + " Gflops");
 		tempa.push(parseFloat(score).toFixed(2) + " Stability");
